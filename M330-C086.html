@@ -1,0 +1,5751 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>User Manual</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="manual/css/bootstrap.min.css">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="manual/style.css">
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="manual/css/jquery.mCustomScrollbar.min.css">
+  <!-- Font Awesome JS -->
+  <link rel="stylesheet" href="libs/fontawesome-free-5.12.1-web/css/all.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>
+          User Manual
+        </h3>
+      </div>
+      <ul class="list-unstyled components">
+        <li>
+          <a href="#">
+            Status
+          </a>
+        </li>
+        <li>
+          <a href="#systemSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-sitemap"></i>
+            System
+          </a>
+          <ul class="collapse list-unstyled" id="systemSubmenu">
+            <li><a href="#system_time_and_date">Time and Date</a></li>
+            <li><a href="#system_com_ports">COM Ports</a></li>
+            <li><a href="#system_logging">Logging</a></li>
+            <li><a href="#system_alarm">Alarm</a></li>
+            <li><a href="#system_ethernet_ports">Ethernet Ports</a></li>
+            <li><a href="#system_client_list">Client List</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#wanSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-exchange-alt"></i>
+            WAN
+          </a>
+          <ul class="collapse list-unstyled" id="wanSubmenu">
+            <li><a href="#wan_priority">Priority</a></li>
+            <li><a href="#wan_ethernet">Ethernet</a></li>
+            <li><a href="#wifi_sta">WIFI STA</a></li>
+            <li><a href="#wan_ipv6_dns">IPv6 DNS</a></li>
+            <li><a href="#wan_health_check">Health Check</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#lteSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-signal"></i>
+            LTE
+          </a>
+          <ul class="collapse list-unstyled" id="lteSubmenu">
+            <li>
+              <a href="#lte_lte_config">LTE Config</a>
+            </li>
+            <li><a href="#lte_gps">GPS</a></li>
+            <li><a href="#lte_gps_track">GPS Track</a></li>
+            <li>
+              <a href="#lte_apn_config">APN Config</a>
+            </li>
+            <li>
+              <a href="#lte_apnx_usage">APN1 Usage</a>
+            </li>
+            <li>
+              <a href="#lte_sms">SMS</a>
+            </li>
+            <li>
+              <a href="#lte_serving_cell">Serving Cell</a>
+            </li>
+            <li><a href="#lte_dns">DNS</a></li>
+            <li><a href="#lte_ussd">USSD</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#wifiSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-wifi"></i>
+            WIFI
+          </a>
+          <ul class="collapse list-unstyled" id="wifiSubmenu">
+            <li><a href="#wifi_config">WIFI Config</a></li>
+            <li><a href="#wifi_mac_filter">MAC Filter</a></li>
+            <li><a href="#wifi_infomation">Client List</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#lanSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-exchange-alt"></i>
+            LAN
+          </a>
+          <ul class="collapse list-unstyled" id="lanSubmenu">
+            <li>
+              <a href="#lan_ipv4">IPv4</a>
+            </li>
+            <li>
+              <a href="#lan_ipv6">IPv6</a>
+            </li>
+            <li>
+              <a href="#lan_vlan">VLAN</a>
+            </li>
+            <li>
+              <a href="#lan_subnet">Subnet</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#ipRoutingSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-random"></i>
+            IP Routing
+          </a>
+          <ul class="collapse list-unstyled" id="ipRoutingSubmenu">
+            <li><a href="#ip_routing_static_route">Static Route</a></li>
+            <li><a href="#policyRT">Policy Route</a></li>
+            <li><a href="#ip_routing_rip">RIP</a></li>
+            <li><a href="#ip_routing_ospf">OSPF</a></li>
+            <li><a href="#ip_routing_bgp">BGP</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#vpnSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-train"></i>
+            VPN
+          </a>
+          <ul class="collapse list-unstyled" id="vpnSubmenu">
+            <li><a href="#vpn_open_vpn">Open VPN</a></li>
+            <li><a href="#vpn_ipsec">IPSec</a></li>
+            <li><a href="#vpn_gre">GRE</a></li>
+            <li><a href="#vpn_pptp_srever">PPTP Server</a></li>
+            <li><a href="#vpn_l2tp">L2TP</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#firewallSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-shield-alt"></i>
+            Firewall
+          </a>
+          <ul class="collapse list-unstyled" id="firewallSubmenu">
+            <li><a href="#firewall_basic_rules">Basic Rules</a></li>
+            <li><a href="#firewall_port_forwarding">Port Forwarding</a></li>
+            <li><a href="#firewall_dmz">DMZ</a></li>
+            <li><a href="#firewall_management_ip">Management IP Address</a></li>
+            <li><a href="#firewall_service_port">Service PORT</a></li>
+            <li><a href="#firewall_ip_filter">IP Filter</a></li>
+            <li><a href="#firewall_mac_filter">MAC Filter</a></li>
+            <li><a href="#firewall_url_filter">URL Filter</a></li>
+            <li><a href="#firewall_nat">NAT</a></li>
+            <li><a href="#firewall_ips">IPS</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#serviceSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-plus-circle"></i>
+            Service
+          </a>
+          <ul class="collapse list-unstyled" id="serviceSubmenu">
+            <li><a href="#service_snmp">SNMP</a></li>
+            <li><a href="#service_tr069">TR069</a></li>
+            <li><a href="#service_dynamic_dns">Dynamic DNS</a></li>
+            <li><a href="#service_vrrp">VRRP</a></li>
+            <li><a href="#service_mqtt">MQTT</a></li>
+            <li><a href="#service_upnp">UPnP</a></li>
+            <li><a href="#service_smtp">SMTP</a></li>
+            <li><a href="#service_ip_alias">IP Alias</a></li>
+            <li><a href="#service_qos">QoS</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#managementSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-cog"></i>
+            Management
+          </a>
+          <ul class="collapse list-unstyled" id="managementSubmenu">
+            <li>
+              <a href="#management_identification">Identification</a>
+            </li>
+            <li>
+              <a href="#management_administration">Administration</a>
+            </li>
+            <li>
+              <a href="#management_contacts">Contacts / On Duty</a>
+            </li>
+            <li>
+              <a href="#management_ssh">SSH</a>
+            </li>
+            <li>
+              <a href="#management_web">Web</a>
+            </li>
+            <li>
+              <a href="#management_telnet">Telnet</a>
+            </li>
+            <li>
+              <a href="#management_firmware">Firmware</a>
+            </li>
+            <li>
+              <a href="#management_configuration">Configuration</a>
+            </li>
+            <li>
+              <a href="#management_load_factory">Load Factory</a>
+            </li>
+            <li>
+              <a href="#management_restart">Restart</a>
+            </li>
+            <li><a href="#management_schedule_reboot">Schedule Reboot</a></li>
+            <li>
+              <a href="#management_fail2ban">Fail2Ban</a>
+            </li>
+            <li><a href="#management_fota">FOTA</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#diagnosisSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-wrench"></i>
+            Diagnosis
+          </a>
+          <ul class="collapse list-unstyled" id="diagnosisSubmenu">
+            <li>
+              <a href="#diagnosis_ping">Ping</a>
+            </li>
+            <li>
+              <a href="#diagnosis_traceroute">Traceroute</a>
+            </li>
+            <li>
+              <a href="#diagnosis_tty2tcp">TTY2TCP</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="list-unstyled components">
+        <p>
+          Color:
+          <span id="color_01" style="color: #EAEAEF" class="color-picker color-picker-active"><i class="fas fa-circle"></i></span>
+          <span id="color_02" style="color: #E9EBFE" class="color-picker                    "><i class="fas fa-circle"></i></span>
+          <span id="color_03" style="color: #DCE2F1" class="color-picker                    "><i class="fas fa-circle"></i></span>
+          <span id="color_04" style="color: #E3EDCD" class="color-picker                    "><i class="fas fa-circle"></i></span>
+          <span id="color_05" style="color: #FDE6E0" class="color-picker                    "><i class="fas fa-circle"></i></span>
+          <span id="color_06" style="color: #FFF2E2" class="color-picker                    "><i class="fas fa-circle"></i></span>
+          <span id="color_07" style="color: #FAF9DE" class="color-picker                    "><i class="fas fa-circle"></i></span>
+        </p>
+      </ul>
+    </nav>
+    <!-- Page Content -->
+    <div id="content">
+<!-- Status -->
+<h2 id="status">Status</h2>
+<p>When you click the Status menu, the interface on main window will depend on your LTE wireless mode that you set up for <strong>Bridge only</strong> or <strong>Router only</strong> to display the status of router to make you know about WAN LTE, Bridge/Router, IP Bridge/Router DNS and LAN Ethernet.</p>
+<p>Note: please confirm the menu of <strong>WAN > Priority</strong> to configure <strong>LTE Net Mode</strong>.</p>
+<h4>Title Bar</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">RSSI</th>
+      <td>Received Signal Strength Indicator.</td>
+    </tr>
+    <tr>
+      <th scope="row">Uptime</th>
+      <td>The time starting turn on the router until current using.</td>
+    </tr>
+    <tr>
+      <th scope="row">WAN Priority</th>
+      <td>Which WAN take first priority.</td>
+    </tr>
+    <tr>
+      <th scope="row">Location</th>
+      <td>(Latitude,Longitude).</td>
+    </tr>
+    <tr>
+      <th scope="row">Google Maps</th>
+      <td>Display Google Map according to location.</td>
+    </tr>
+    <tr>
+      <th scope="row">Language</th>
+      <td>Choose your language from the drop-down list on the upper right corner of the title bar.</td>
+    </tr>
+    <tr>
+      <th scope="row">Login/Logout</th>
+      <td>Click to log in or log out of the web configurator.</td>
+    </tr>
+    <tr>
+      <th scope="row">?</th>
+      <td>On-line manual.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > DO</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Status</th>
+      <td>
+        <ul>
+          <ul>
+            <li>Alarm ON: DO is configured to turn on when alarm is triggered</li>
+            <li>Alarm OFF: Alarm is configured to be disabled</li>
+            <li>Alarm PULSE: DO is configured to pulse when alarm is triggered</li>
+            <li>Force ON: DO is turn on by remote command</li>
+            <li>Force OFF: DO is turn on by remote command</li>
+            <li>Force PULSE:DO is turn pulse by remote command</li>
+          </ul>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > GPS</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Latitude</th>
+      <td>Latitude</td>
+    </tr>
+    <tr>
+      <th scope="row">Longitude</th>
+      <td>Longitude</td>
+    </tr>
+    <tr>
+      <th scope="row">Horizontal</th>
+      <td>Horizontal precision:0.5-99.9</td>
+    </tr>
+    <tr>
+      <th scope="row">Altitude</th>
+      <td>The altitude of antenna away from the sea level(unit: m), accurate to one decimal place</td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td>UTC date when fixing position</td>
+    </tr>
+    <tr>
+      <th scope="row">Time</th>
+      <td>UTC time when fixing position</td>
+    </tr>
+    <tr>
+      <th scope="row">Satellite</th>
+      <td>Number of satellites</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > WAN LTE</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">SIM Status</th>
+      <td>
+        <ul>
+          <ul>
+            <li>Ready: No PIN code protection or unlock already</li>
+            <li>Unlock: Unlock pin code protection</li>
+            <li>Locked: Locked by pin code</li>
+            <li>Error: SIM operation error</li>
+            <li>Blocked: PUK needed to unlock</li>
+            <li>Not Inserted: No sim card</li>
+            <li>Hardware Error: Unable to enable function</li>
+            <li>Ignore: Ignore Specified SIM in dual sim device</li>
+          </ul>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Operator</th>
+      <td>Operator name.</td>
+    </tr>
+    <tr>
+      <th scope="row">Modem Access</th>
+      <td>The router to access protocol type.</td>
+    </tr>
+    <tr>
+      <th scope="row">IMSI</th>
+      <td>The IMSI number of the SIM card.</td>
+    </tr>
+    <tr>
+      <th scope="row">Phone Number</th>
+      <td>The phone number of the SIM card.</td>
+    </tr>
+    <tr>
+      <th scope="row">Band</th>
+      <td>The current connected Band.</td>
+    </tr>
+    <tr>
+      <th scope="row">EARFCN</th>
+      <td>Absolute radio-frequency channel number.</td>
+    </tr>
+    <tr>
+      <th scope="row">PLMN</th>
+      <td>Public LAN Mobile Network ID.</td>
+    </tr>
+    <tr>
+      <th scope="row">Roaming</th>
+      <td>Roaming status.</td>
+    </tr>
+     <tr>
+      <th scope="row">Uplink Speed Kbps</th>
+      <td>Uplink Speed in Kbps.</td>
+    </tr>
+    <tr>
+      <th scope="row">Downlink Speed Kbps</th>
+      <td>Downlink Speed in Kbps.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tx/Rx KBytes</th>
+      <td>Accumulated TX/RX in KBytes.</td>
+    </tr>
+    <tr>
+      <th scope="row">TX/RX Dropped Packets</th>
+      <td>TX/RX Dropped Packets.</td>
+    </tr>
+    <tr>
+      <th scope="row">LTE Net Mode</th>
+      <td>LTE Network Mode for both APNs</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > LTE APN1</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">IPv4 Address</th>
+      <td>WAN obtain IPv4 Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Mask</th>
+      <td>WAN obtain IPv4 Mask.</td>
+    </tr>
+    <tr>
+      <th scope="row">Default Gateway</th>
+      <td>WAN IPv4 Default Gateway.</td>
+    </tr>
+    <tr>
+      <th scope="row">Connected</th>
+      <td>Yes: Connected; No: Disconnected.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Conn Time</th>
+      <td>WAN IPv4 Connected Time.</td>
+    </tr>
+    <tr>
+      <th scope="row">Uplink Speed Kbps</th>
+      <td>Uplink Speed in Kbps.</td>
+    </tr>
+    <tr>
+      <th scope="row">Downlink Speed Kbps</th>
+      <td>Downlink Speed in Kbps.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tx/Rx KBytes</th>
+      <td>Accumulated TX/RX in KBytes.</td>
+    </tr>
+    <tr>
+      <th scope="row">TX/RX Dropped Packets</th>
+      <td>TX/RX Dropped Packets.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > LTE APN1 DNS</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">IPv4 DNS Server #1</th>
+      <td>IPv4 DNS Server Address#1.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 DNS Server #2</th>
+      <td>IPv4 DNS Server Address#2.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 DNS Server #3</th>
+      <td>IPv4 DNS Server Address#3.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 DNS Server #1</th>
+      <td>IPv6 DNS Server Address#1.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 DNS Server #2</th>
+      <td>IPv6 DNS Server Address#2.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 DNS Server #3</th>
+      <td>IPv6 DNS Server Address#3.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > WAN Ethernet</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">IPv4 Address</th>
+      <td>Ethernet WAN obtain IPv4 Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Mask</th>
+      <td>Ethernet WAN obtain IPv4 Mask.</td>
+    </tr>
+    <tr>
+      <th scope="row">Default Gateway</th>
+      <td>Ethernet WAN IPv4 Default Gateway.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Conn Time</th>
+      <td>Ethernet WAN IPv4 Connected Time.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > WAN WiFi</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">IPv4 Address</th>
+      <td>WAN WiFi obtain IPv4 Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Mask</th>
+      <td>WAN WiFi obtain IPv4 Mask.</td>
+    </tr>
+    <tr>
+      <th scope="row">Default Gateway</th>
+      <td>WAN WiFi IPv4 Default Gateway.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Conn Time</th>
+      <td>WAN WiFi IPv4 Connected Time.</td>
+    </tr>
+    <tr>
+      <th scope="row">SSID</th>
+      <td>Service Set Identifier of WAN WiFi.</td>
+    </tr>
+    <tr>
+      <th scope="row">MAC Address</th>
+      <td>MAC Address of WAN WiFi.</td>
+    </tr>
+    <tr>
+      <th scope="row">Channel</th>
+      <td>The current connected Channel.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > LAN Ethernet</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">IPv4 Address</th>
+      <td>LAN is assigned IPv4 Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Mask</th>
+      <td>LAN is assigned IPv4 Mask.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 Address</th>
+      <td>LAN is assigned IPv6 Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 Conn Time</th>
+      <td>IPv6 Connected Time.</td>
+    </tr>
+    <tr>
+      <th scope="row">Uplink Speed Kbps</th>
+      <td>Uplink Speed in Kbps.</td>
+    </tr>
+    <tr>
+      <th scope="row">Downlink Speed Kbps</th>
+      <td>Downlink Speed in Kbps.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tx/Rx KBytes</th>
+      <td>Accumulated TX/RX in KBytes.</td>
+    </tr>
+    <tr>
+      <th scope="row">TX/RX Dropped Packets</th>
+      <td>TX/RX Dropped Packets.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > WiFi AP</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Connected Clients</th>
+      <td>The number of connected clients</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Status > Connected VPN Connections</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <th scope="row">Open VPN</th>
+      <td>Open VPN connected number</td>
+    </tr>
+    <tr>
+      <th scope="row">IPSec</th>
+      <td>IPSec connected number</td>
+    </tr>
+    <tr>
+      <th scope="row">GRE</th>
+      <td>GRE connected number</td>
+    </tr>
+    <tr>
+      <th scope="row">PPTP Server</th>
+      <td>PPTP server connected number</td>
+    </tr>
+     <tr>
+      <th scope="row">L2TP</th>
+      <td>L2TP connected number</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- System - Time and Date -->
+<h2 id="system_time_and_date">
+  <i class="fas fa-sitemap"></i>
+  System > Time and Date
+</h2>
+<p>This section allows you to set up the time and date of router and NTP server. There are two modes at Time and Date Setup, including Get from Time Server and Manual. The default mode is Get from Time Server.</p>
+<p>If the router has GPS function, you can turn on "GPS Time" for sync time from GPS server.</p>
+<p>For Time Zone Setup, the Daylight Savings Time allows the device to forward/backward the amount of time from Ahead of standard time setting automatically when the time is at the Daylight Savings duration that you have set up before.</p>
+<h4>System > Time and Date > Time Zone Setup</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Daylight Saving</th>
+      <td>Turn on/off the Daylight Savings feature. Select from Off or On. The default is Off.</td>
+    </tr>
+    <tr>
+      <th scope="row">Ahead of standard time</th>
+      <td>The forward/backward minutes when enter/leave Daylight Savings duration. Default is 60 mins.</td>
+    </tr>
+    <tr>
+      <th scope="row">Start Date/Start Time</th>
+      <td>
+        <ul>
+          <li>Time to enter Daylight Savings duration.</li>
+          <li>The Month range is 1~12</li>
+          <ul>
+            <li>1- Jan</li>
+            <li>2 - Feb</li>
+            <li>3 - Mar</li>
+            <li>4 - Apr</li>
+            <li>5 - May</li>
+            <li>6 - Jun</li>
+            <li>7 - Jul</li>
+            <li>8 - Aug</li>
+            <li>9 - Sep</li>
+            <li>10 - Oct</li>
+            <li>11 - Nov</li>
+            <li>12 - Dec</li>
+          </ul>
+          <li>The Week range is 1~5</li>
+          <ul>
+            <li>1 - first week in month.</li>
+            <li>2 - second week in month</li>
+            <li>3 - third week in month</li>
+            <li>4 - fourth week in month</li>
+            <li>5 - fifth week in month</li>
+          </ul>
+          <li>The Day range is 0~6</li>
+          <ul>
+            <li>0 - Sunday(The start day of a week)</li>
+            <li>1- Monday</li>
+            <li>2 - Tuesday</li>
+            <li>3 - Wednesday</li>
+            <li>4 - Thursday</li>
+            <li>5 - Friday</li>
+            <li>6 - Saturday</li>
+          </ul>
+          <li>The Hour range is 0~23</li>
+          <li>The Min range is 0~59</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">End Date/End Time</th>
+      <td>Time to leave Daylight Savings duration. Same with Start Date/Start Time.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>System > Time and Date > Time Server</h4>
+<p>The Time server feature allows user to set a time server for LAN side client to get the time through NTP/SNTP protocol.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Server mode</th>
+      <td>Turn on/off the time server.</td>
+    </tr>
+    <tr>
+      <th scope="row">Server port</th>
+      <td>The UDP port listened by time server.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- System - COM Ports -->
+<h2 id="system_com_ports">
+  <i class="fas fa-sitemap"></i>
+  System > COM Ports
+</h2>
+<p>This section provides you to configure the COM port settings and remotely manage the device through the virtual COM setting. For the remote management, the managed device should be connected to the cellular router by serial interface.</p>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th colspan="1" rowspan="1">
+        <p><span>Item</span></p>
+      </th>
+      <th colspan="1" rowspan="1">
+        <p><span>Description</span></p>
+      </th>
+    </tr>
+    <tr>
+      <th class="c224 c471" colspan="2" rowspan="1">
+        <p><span>Edit Configuration</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Baud Rate</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from the current Baud Rate. &nbsp;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Data</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from 7 bit or 8 bit.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Parity</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from the information of Parity.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Stop</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from 1 bit or 2 bit.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Flow Control</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from none, Xon/Xoff or hardware. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <th class="c471 c224" colspan="2" rowspan="1">
+        <p><span>Virtual COM</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from Disable, Server or Client. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Protocol</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from TCP or UDP.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Host Address</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The host address is only available on client mode. Specify what the domain name or IP address (IPv4 or IPv6) to be connected.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Redirect Port</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <ul class="c12 lst-kix_list_22-0">
+          <li class="c54 c183"><span>Server Mode: This network package of cellular router is on this port. </span></li>
+          <li class="c54 c183"><span>Client Mode: The network package of remote device is on the remote host.</span></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- System - Logging -->
+<h2 id="system_logging">
+  <i class="fas fa-sitemap"></i>
+  System > Logging
+</h2>
+<p>This section allows cellular router to record the data and display the status of data.</p>
+<h4>Logging > Logging</h4>
+<p>Logging section provides you to control all logging records.</p>
+<p>Users need to select Apply to confirm your settings.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Turn on/off the logging configuration. Select from Disable or Enable. The default is Enable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Remote Log</th>
+      <td>The logging messages send to remote log or not. Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Log Server Address</th>
+      <td>When you choose Enable on Remote Log, you should input IP address to save and receive all logging data.<br />
+      Note: This server should have installed Log software.</td>
+    </tr>
+    <tr>
+      <th scope="row">Log Server Port</th>
+      <td>When you choose Enable on Remote Log, you can set the listen port of the Log Server.</td>
+    </tr>
+    <tr>
+      <th scope="row">Local Log Size</th>
+      <td>The file size of log. You can adjust it to record longer or shorter logging data.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>Logging > Log</h4>
+<p>This section displays all data status.</p>
+<ol>
+  <li>You can choose Filter function to quickly search for your data.</li>
+  <li>When you click Clear, all of the data that displays on the interface will be totally cleared without any backup.</li>
+  <li>When you click Refresh, the system will update and display the latest data from your cellular router.</li>
+  <li>When you click Download Logs, the system will download the latest data from your cellular router.</li>
+</ol>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Filter</th>
+      <td>Filter the required data quickly.</td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td>Show the date of log for each logging data.</td>
+    </tr>
+    <tr>
+      <th scope="row">Group</th>
+      <td>Show the group of software functions.</td>
+    </tr>
+    <tr>
+      <th scope="row">Module</th>
+      <td>Show the module of group of software functions.</td>
+    </tr>
+    <tr>
+      <th scope="row">Message</th>
+      <td>Show the messages for each logging data.</td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- System - Alarm -->
+<h2 id="system_alarm">
+  <i class="fas fa-sitemap"></i>
+  System > Alarm
+</h2>
+<ul>
+  <li>If you select [SMS] in Alarm input/output, you need to add the trust phone number into [Contracts/ On Duty].</li>
+  <li>If you select [SNMP trap] in Alarm output, you need to set up SNMP trap configuration from Service SNMP.</li>
+  <li>If you select [E-Mail] in Alarm output, you need to set up SMTP configuration from Service SMTP.</li>
+  <li>If you select [TR069] in Alarm output, you need to set up TR069 configuration from Service TR069.</li>
+</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <th scope="row">Mode</th>
+      <td>Turn on/off the Alarm configuration. Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Alarm Input</th>
+      <td>
+       <ul>
+          <li>SMS: It means on duty team members on [Contacts / On Duty] can send SMS to the phone number of using SIM card to trigger alarm.</li>
+          <li>DI: IO to trigger alarm.</li>
+        <li>VPN disconnect: All tunnels get disconnected then trigger alarm.</li>
+        <li>WAN disconnect: WAN connections get disconnected then trigger alarm.</li>
+        <li>LAN disconnect: LAN connection get disconnected then trigger alarm.</li>
+        <li>Reboot: Reboot then trigger alarm.</li>
+        <li>AP lost all clients: AP lost all client connections.</li>
+       </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">DI Trigger</th>
+      <td>Select from High or Low. The default is High Trigger</td>
+    </tr>
+    <tr>
+      <th scope="row">Alarm Output</th>
+      <td>Select from SMS, DO, SNMP trap, E-mail and TR069 as alarm output.</td>
+    </tr>
+     <tr>
+      <th scope="row">DO behavior</th>
+      <td>
+        <ul>
+          <li>Always: Pull DO high</li>
+          <li>Pulse: High and Low continuourly</li>
+          <li>Pulse Time Length: Pulse time length (unit: mini seconds)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">SMS/E-mail</th>
+      <td>Write your messages and the messages limit 80 pure English characters or 20 characters for other languages to deliver.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- System - Ethernet Ports -->
+<h2 id="system_ethernet_ports">
+  <i class="fas fa-sitemap"></i>
+  System > Ethernet Ports
+</h2>
+<p>This section allows you to configure the Ethernet.</p>
+<p>For Flow Control, it allows you to configure the Ethernet and solve unstable throughput under heavy loading. Sending 64 Bytes with bandwidth 100M bps traffic to LAN and WAN at the same time, the throughput may drop to zero at either side. When the system is very busy or buffer is exhausted, the flow control packet will be sent out to indicate the link party that it should stop to send the packet to system. The flow control packet will be sent out again once the system goes back to normal to indicate the link party that it can send packet again.</p>
+<p>Note: The LAN port of Ethernet has different layout based on which router model you use.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Ethernet Ports Status</th>
+      <td>Show the connectivity status of LAN and WAN.</td>
+    </tr>
+    <tr>
+      <th scope="row">Ethernet Ports Configurations</th>
+      <td>Select from Auto, 100M Full, 100M Half, 10M Full, 10M Half and Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">WAN Ethernet</th>
+      <td>MTU is the Maximum Transmission Unit that can be sent over the WAN Ethernet interface. It allows users to adjust the MTU size to fit into their existing network environment.</td>
+    </tr>
+    <tr>
+      <th scope="row">Flow Control</th>
+      <td>Allow user to control the traffic ingress from Ethernet LAN or WAN.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- System - Client List -->
+<h2 id="system_client_list">
+  <i class="fas fa-sitemap"></i>
+  System > Client List
+</h2>
+<p>
+  This section allows you to understand how many devices have been connected and their status from the router.
+</p>
+<p>
+  There are two types, one is <b>DHCP Client</b>&nbsp;and the other is <b>Online</b>.
+</p>
+<p>The default is both types to show all status when the router is on DHCP Client and Online.</p>
+<table class="table table-bordered">
+  <tbody>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>
+        List Type
+      </td>
+      <td>
+        <ul>
+          <li><b>DHCP Client: </b><span>List all clients&rsquo; information when it is via DHCP.</span></li>
+          <li><b>Online:</b><span>&nbsp;List the information when it is online.</span></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- WAN - Priority -->
+<h2 id="wan_priority">
+  <i class="fas fa-exchange-alt"></i>
+  WAN > Priority
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Priority</th>
+      <td>
+       <ul>
+       <li>Auto: Please specify the connection order.</li>
+       <li>LTE Only: Only use LTE connection.</li>
+       <li>ETH Only: Only use WAN Ethernet connection.</li>
+        <li>WiFi Only: Only use WAN WiFi connection.</li>
+      </ul>
+  </td>
+    </tr>
+  <!--
+  Product with WiFi Client and WAN Ethernet:
+  There are three options in 1st {ETH, WiFi, LTE}
+  2 options in 2nd except for 1st
+  leave only one in 3rd
+  -->
+    <tr>
+      <th scope="row">Connect Order</th>
+      <td>
+        <ul>
+        <li>1st: The first priority of wan interface for connection.</li>
+        <li>2nd: The second priority of wan interface for connection.</li>
+        <li>3rd: The 3rd priority of wan interface for connection.</li>
+      </ul>
+      </td>
+    </tr>
+ <tr>
+  <th scope="row">LTE Net Mode</th>
+    <td>
+    <ul>
+      <li>Bridge Only: APN1 act as bridge for internet access.</li>
+      <li>Router Only: APN1 act as router for internet access.</li>
+  </ul>
+  </td>
+    </tr>
+ <tr>
+  <th scope="row">WIFI Net Mode</th>
+    <td>
+    <ul>
+      <li>Bridge Only: WIFI STA act as bridge for internet access.</li>
+      <li>Router Only: WIFI STA act as router for internet access.</li>
+  </ul>
+  </td>
+    </tr>
+    <tr>
+      <th scope="row">WAN/LAN2 Port Function</th>
+      <td>Allow user to setup the WAN/LAN2 Port function as WAN or LAN2.</td>
+    </tr>
+</tbody>
+</table>
+<div class="line"></div>
+<!-- WAN - Ethernet -->
+<h2 id="wan_ethernet">
+  <i class="fas fa-exchange-alt"></i>
+  WAN > Ethernet
+</h2>
+<p>This section provides three options, including DHCP Client,PPPoE Client and Static IPv4.The default is DHCP Client.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">WAN Ethernet</th>
+      <td>
+  <ul>
+  <li>DHCP Client: DHCP server-assigned IP address, netmask, gateway, and DNS.</li>
+  <li>PPPoE Client: Your ISP will provide you with a username and password. This option is typically used for DSL services.</li>
+  <li>Static IPv4: User-defined IP address, netmask, and gateway address.</li>
+  </ul>
+   </td>
+    </tr>
+  </tbody>
+</table>
+<p>When selecting DHCP Client, you can set up DNS Server Configuration.</p>
+<p>For IPv4 DNS Server, it provides three options to set up and each option has provided with From ISP,User Defined and None to configure.</p>
+<h4>WAN Ethernet > DHCP Client</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+     <p>IPv4 DNS Server #1</p>
+     <p>IPv4 DNS Server #2</p>
+     <p>IPv4 DNS Server #3</p>
+   </th>
+      <td>
+     <ul>
+    <li>Each setting DNS Server has three options, including From ISP, User Defined and None.</li>
+    <li>When you select From ISP, the IPv4 DNS server IP is obtained from ISP.</li>
+    <li>When you select User Defined, the IPv4 DNS server IP is input by user.</li>
+  </ul>
+   </td>
+    </tr>
+  </tbody>
+</table>
+<p>When you select PPPoE Client, the interface shows the item of configuration to fill in your User Name and Password. service name is an option setting</p>
+<p>When you select Static IPv4, the interface shows the information of configuration, including IP Address, IP Mask and Gateway Address.</p>
+<h4>WAN Ethernet > Static IPv4</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan=2>Static IPv4 Configuration</td>
+    </tr>
+    <tr>
+      <th scope="row">IP Address</th>
+      <td>Fill in the IP Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IP Mask</th>
+      <td>Fill in the IP Mask.</td>
+    </tr>
+    <tr>
+      <th scope="row">Gateway Address</th>
+      <td>Fill in Gateway Address.</td>
+    </tr>
+    <tr>
+      <td colspan=2>DNS Server Configuration</td>
+    </tr>
+    <tr>
+      <th scope="row">
+     <p>IPv4 DNS Server #1</p>
+     <p>IPv4 DNS Server #2</p>
+     <p>IPv4 DNS Server #3</p>
+   </th>
+      <td>The IPv4 DNS server IP is input by user.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>WAN Ethernet > Ethernet Ping Health</h4>
+<p>If you configure WAN Priority to Auto mode, the system would choose the cost effective connection first such as Ethernet. However in case the Ethernet connection exist but it is unable to access internet; you can enable Ethernet Ping Health and the system would switch to LTE connection and switch back whenever Ethernet is able to access internet again.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Ethernet Ping Health</th>
+      <td>Select from Disable or Enable. The default is Enable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Interval</th>
+      <td>The interval is from 1 to 60 seconds.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Host 1</th>
+      <td>Input the address of IPv4 Host 1.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Host 2</th>
+      <td>Input the address of IPv4 Host 2.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 Host 1</th>
+      <td>Input the address of IPv6 Host 1.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 Host 2</th>
+      <td>Input the address of IPv6 Host 2.</td>
+    </tr>
+    <tr>
+      <th scope="row">Hint</th>
+      <td>Show the usage descriptions.</td>
+    </tr>
+  </tbody>
+</table>
+<p>In addition, you can check which WAN is actually using from Status page. The interface will be shown check mark (V symbol) on the connection title. For IPv6 address, the status will be displayed on LAN Etherent Interface when IPv6 is using as WAN connection.</p>
+<div class="line"></div>
+<!-- WiFi - Client List -->
+<h2 id="wifi_sta">
+  <i class="fas fa-exchange-alt"></i>
+  WAN > WiFi STA
+</h2>
+<p>Station (STA) mode is used to connect to a Wi-Fi network established by an access point.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <th scope="row">STA Mode</th>
+      <td>Disable or Enable this feature.</td>
+    </tr>
+   <tr>
+      <th scope="row">Tx Power</th>
+      <td>The TX power setting specifies the strength of the signal.</td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>Scan table</span></p>
+      </th>
+<!-- <th scope="row">Scan table</th> -->
+<!-- <td> Upper limit is 32 </td> -->
+    </tr>
+    <tr>
+      <th scope="row">Scan</th>
+      <td>List AP information that can be scanned.</td>
+    </tr>
+    <tr>
+      <th scope="row">Connect</th>
+      <td>Connect to your chosen Wireless Access Point.</td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>Manage Known WiFi Networks</span></p>
+      </th>
+<!-- <th scope="row">Manage Known WiFi Networks</th> -->
+<!-- <td> Upper limit is 16 </td> -->
+    </tr>
+    <tr>
+      <th scope="row">Connect</th>
+      <td>Connect to your chosen Wireless Access Point.</td>
+    </tr>
+    <tr>
+      <th scope="row">Delete</th>
+      <td>Delete your choice of Wireless Access Point.</td>
+    </tr
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- WAN - IPv6 DNS -->
+<h2 id="wan_ipv6_dns">
+  <i class="fas fa-exchange-alt"></i>
+  WAN > IPv6 DNS
+</h2>
+<p>This section allows you to set up IPv6 DNS Server Configuration.</p>
+<p>For IPv6 DNS Server, it provides three options to set up and each option has provided with "From ISP", "User Defined" and "None" to configure.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        IPv6 DNS Server #1</br>
+        IPv6 DNS Server #2</br>
+        IPv6 DNS Server #3</br>
+   </th>
+      <td>
+  <ol>
+  <li>Each setting DNS Server has three options, including From ISP, User Defined and None.</li>
+  <li>When you select From ISP,the IPv6 DNS server IP is obtained from ISP.</li>
+  <li>When you select User Defined, the IPv6 DNS server IP is input by user.</li>
+  </ol>
+   </td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- WAN - Health Check -->
+<h2 id="wan_health_check">
+  <i class="fas fa-exchange-alt"></i>
+  WAN > Health Check
+</h2>
+<p>If you configure WAN Priority to Auto mode, the system would choose the cost effective connection first such as Ethernet. However in case the Ethernet connection exist but it is unable to access internet; you can enable WAN Health Check and the system would switch to LTE connection and switch back whenever Ethernet is able to access internet again.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Health Check</th>
+      <td>
+        <ul>
+          <li>Select from Disable or Enable. The default is Enable.</li>
+          <li>When Disable is chosen, the connection will NOT be treated as down of IP routing error.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Method</th>
+      <td>
+        <p>This setting specifies the health check method for the WAN connection.</p>
+        <p>This Value can be PING, DNS Lookup. The default is Ping.</p>
+        <p>DNS Lookup: Connections will be considered as up if DNS responses are received from any one of the health check DNS servers, regardless of a positive or negative result.</p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Use the first two DNS from ISP</th>
+      <td>
+        <ul>
+          <li>If this setting is checked, the first two DNS from ISP will be DNS lookup targets for checking a connection health.</li>
+          <li>If this setting is not checked, Host 1 must be filled, while a value for Host 2 is optional.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Host 1</th>
+      <td>Input the address of IPv4 Host 1.<br>Host1 must be filled.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Host 2</th>
+      <td>Input the address of IPv4 Host 2.<br>Host2 is optional.</td>
+    </tr>
+    <tr>
+      <th scope="row">LTE Keep Alive</th>
+      <td>Enable LTE Keep Alive to continue to send health check packages to avoid no network traffic cause operation kick out the connection.</td>
+    </tr>
+   <tr>
+      <th scope="row">Interval</th>
+      <td>The interval is from 1 to 3600 seconds per interface.</td>
+    </tr>
+    <tr>
+      <th scope="row">Retries</th>
+      <td>The retries is from 1 to 255 times per interface.</td>
+    </tr>
+    <tr>
+      <th scope="row">Ping Pass Threshold</th>
+      <td>
+       <ul>
+        <li>The Ping Pass Threshold is from 1 to 255 times per interface.</li>
+        <li>The Threshold is to avoid failing over the unstable link.</li>
+       </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Wait</th>
+      <td>This is the timer to wait for DNS report. The value is from 1 to 60 seconds.</td>
+    </tr>
+    <tr>
+      <th scope="row">Hint</th>
+      <td>Show the usage descriptions.</td>
+    </tr>
+  </tbody>
+</table>
+<p>In addition, you can check which WAN is actually using from Status page. The interface will be shown check mark (V symbol) on the connection title. For IPv6 address, the status will be displayed on LAN Etherent Interface when IPv6 is using as WAN connection.</p>
+<div class="line"></div>
+<!-- LTE - LTE Config -->
+<h2 id="lte_lte_config">
+  <i class="fas fa-signal"></i>
+  LTE > LTE Config
+</h2>
+<h4>LTE Config > LTE Config</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Auto</th>
+      <td>Automatically connect the possible band.</td>
+    </tr>
+    <tr>
+      <th scope="row">4G Only</th>
+      <td>Connect to 4G network only.</td>
+    </tr>
+    <tr>
+      <th scope="row">3G Only</th>
+      <td>Connect to 3G network only.</td>
+    </tr>
+    <tr>
+      <th scope="row">2G Only</th>
+      <td>Connect to 2G network only.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>LTE Config > MTU</h4>
+<p>MTU is the Maximum Transmission Unit that can be sent over the LTE interface. It allows user to adjust the MTU size to fit into their existing network environment.</p>
+<div class="line"></div>
+<!-- LTE - GPS -->
+<h2 id="lte_gps">
+  <i class="fas fa-signal"></i>
+  LTE > GPS > Status
+</h2>
+<p>This section allows you to view GPS status. </p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Latitude</th>
+      <td>Latitude</td>
+    </tr>
+    <tr>
+      <th scope="row">Longitude</th>
+      <td>Longitude</td>
+    </tr>
+    <tr>
+      <th scope="row">Horizontal</th>
+      <td>Horizontal precision:0.5-99.9</td>
+    </tr>
+    <tr>
+      <th scope="row">Altitude</th>
+      <td>The altitude of antenna away from the sea level(unit: m), accurate to one decimal place</td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td>UTC date when fixing position</td>
+    </tr>
+    <tr>
+      <th scope="row">Time</th>
+      <td>UTC time when fixing position</td>
+    </tr>
+    <tr>
+      <th scope="row">Satellite</th>
+      <td>Number of satellites</td>
+    </tr>
+  </tbody>
+</table>
+<!-- LTE - GPS -->
+<h2 id="lte_gps">
+  <i class="fas fa-signal"></i>
+  LTE > GPS > Config
+</h2>
+<p>This section allows you to set up GPS Configuration and send out GPS location to TCP Server or display in log. </p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Report to</th>
+      <td>Select from TCP Server and LOG.</td>
+    </tr>
+    <tr>
+      <th scope="row">Internal</th>
+      <td>Query GPS interval.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Address</th>
+      <td>GPS IPv4 TCP Server Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4 Address Port</th>
+      <td>GPS IPv4 TCP Server Port.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 Address</th>
+      <td>GPS IPv6 TCP Server Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">IPv6 Address Port</th>
+      <td>GPS IPv6 TCP Server Port.</td>
+    </tr>
+    <tr>
+      <th scope="row">Report Prefix</th>
+      <td>Identification for GPS Track.</td>
+    </tr>
+</tbody>
+</table>
+<div class="line"></div>
+<!-- LTE - GPS Track -->
+<h2 id="lte_gps_track">
+  <i class="fas fa-signal"></i>
+  LTE > GPS Track
+</h2>
+<p>This section allows user to see the GPS Track. </p>
+<div class="line"></div>
+<!-- LTE - APN Config -->
+<h2 id="lte_apn_config">
+  <i class="fas fa-signal"></i>
+  LTE > APN Config
+</h2>
+<h4>APN Config > Connect Policy</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Connect Action</th>
+      <td>
+       <ul>
+        <li>Disconnect: Disconnect APN connections</li>
+      <li>Connect: Connect APN connections</li>
+  </ul>
+</td>
+    </tr>
+    <tr>
+      <th scope="row">Disable Roaming</th>
+      <td>
+       <ul>
+        <li>NO: make connection even device is in roaming mode.</li>
+            <li>YES: Not to make connection when device is in roaming.</li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>APN Config > Recover APN1</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Recover APN1</th>
+      <td>
+       <ul>
+        <li>No: Not to recover when APN1 is continuous link down</li>
+          <li>Yes: Recover APN1 by using specified method</li>
+  </ul>
+</td>
+    </tr>
+    <tr>
+      <th scope="row">When APN1 continuous link down for xx times.</th>
+      <td>When link down number reach the specified number then the system will proceed recover action</td>
+      <td>
+        <ul>
+       <ul>
+            <li>Reboot: Reboot the system</li>
+            <li>Recover to default APN: Replace active APN by using factory default APN</li>
+            <li>Recover to previous working APN: Replace active APN by using previous working APN<</li>
+          </ul>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>APN Config > SIM Configuration</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Status</th>
+      <td>Display SIM card status.</td>
+    </tr>
+    <tr>
+      <th scope="row">SIM PIN enable</th>
+      <td>
+       <ul>
+        <li>Enable to display SIM PIN setting.</li>
+            <li>Disable to hide SIM PIN setting.</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">SIM PIN</th>
+      <td>a password personal identification number (PIN) for ordinary use to protect your SIM card.</td>
+    </tr>
+    <tr>
+      <th scope="row">Confirmed SIM PIN.</th>
+      <td>Double confirm SIM PIN password.</td>
+    </tr>
+    <tr>
+      <th scope="row">SIM PUK</th>
+      <td>If user input the wrong SIM PIN more than 3 times, the user needs another password personal unblocking code (PUK) for PIN unlocking. Please check your operator for forgotten PUK number.</td>
+    </tr>
+    <tr>
+      <th scope="row">Confirmed SIM PUK</th>
+      <td>Double confirm SIM PUK password.</td>
+    </tr>
+    <tr>
+      <th scope="row">Change SIM PIN</th>
+      <td>If you want to change SIM PIN code, you can click Change button and type old SIM PIN code and new SIM PIN code. Please aware not to exceed the retry number (PIN remaining number and PUN remaining number).</td>
+    </tr>
+    <tr>
+      <th scope="row">Old PIN</th>
+      <td>Please input the current SIM PIN code.</td>
+    </tr>
+    <tr>
+      <th scope="row">New PIN</th>
+      <td>Please input the newly update SIM PIN code.</td>
+    </tr>
+    <tr>
+      <th scope="row">PIN remaining number</th>
+      <td>Display the allowed remaining PIN code retry number.</td>
+    </tr>
+    <tr>
+      <th scope="row">PUK remaining number</th>
+      <td>Display the allowed remaining PUK code retry number.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>APN Config > APN1</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">APN</th>
+      <td>
+The Access Point Name (APN) is the name for the settings to set up a connection to the gateway between your carrier's cellular network and the Public Internet. <br>
+Leaving it empty will search internally database automatically by SIM card for connection.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td>Username for authentication. The username can be input by user or the system will search from internal database if the APN setting is empty.</td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td> Password for authentication. The password can be input by user or the system will search from internal database if the APN setting is empty.</td>
+    </tr>
+    <tr>
+      <th scope="row">Confirm Password</th>
+      <td>Double confirm password.</td>
+    </tr>
+    <tr>
+      <th scope="row">Auth: (None/PAP/CHAP)</th>
+      <td>If Auth mode is not None, most servers require username and password above.</td>
+    </tr>
+    <tr>
+      <th scope="row">Enable IPv6</th>
+      <td>If IPv6 is not selected, then only pure IPv4 connection.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>APN Config > Data Limitation</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Turn on/off the Data Limitation to disable or enable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Already Used Data (MB)</th>
+      <td>Display current used Data since last reset.</td>
+    </tr>
+    <tr>
+      <th scope="row">Max Data Limitation (MB)</th>
+      <td>Configure maximum Data Limitation.</td>
+    </tr>
+    <tr>
+      <th scope="row">Monthly Reset</th>
+      <td>Set up the reset time during the month.</td>
+    </tr>
+    <tr>
+      <th scope="row">Now Time</th>
+      <td>Show the current time of system.</td>
+    </tr>
+</tbody>
+</table>
+<div class="line"></div>
+<div class="line"></div>
+<!-- LTE - APN1 Usage -->
+<h2 id="lte_apnx_usage">
+  <i class="fas fa-signal"></i>
+  LTE > APN1 Usage
+</h2>
+<h4>Real Time > Used MB in 10 Seconds</h4>
+<p>It displays real-time Download/Upload/Total MB for 10 seconds period.</p>
+<h4>Hourly</h4>
+<p>It displays Download/Upload/Total MB per hour in one day for current using SIM card and the view window size is 24 hours.</p>
+<h4>Daily</h4>
+<p>It displays Download/Upload/Total MB per day in one month for current using SIM card and the view window size is 31 days.</p>
+<h4>Weekly</h4>
+<p>It displays Download/Upload/Total MB per day in one week for current using SIM card and the view window size is 7 days.</p>
+<h4>Monthly</h4>
+<p>It displays Download/Upload/Total MB per month in one year for current using SIM card and the view window size is 12 months.</p>
+<div class="line"></div>
+<!-- LTE - SMS -->
+<h2 id="lte_sms">
+  <i class="fas fa-signal"></i>
+  LTE > SMS
+</h2>
+<h4>SMS > SMS Action</h4>
+<p>When enabling SMS Action, it allows trust phone number which in [trusted and on duty members] list by sending key words SMS to trigger device setting/action/query status.</p>
+<h4>SMS > View SMS</h4>
+<p>This section allows you to review the information of SMS that you have received, including the state, phone and date and time. You can click [Refresh] button to review all messages. Please [Clear] clear button to clear all read messages</p>
+<div class="line"></div>
+<!-- LTE - Serving Cell -->
+<h2 id="lte_serving_cell">
+  <i class="fas fa-signal"></i>
+  LTE > Serving Cell
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">RSRP</th>
+      <td>Reference Signal Received Power.</td>
+    </tr>
+    <tr>
+      <th scope="row">RSRQ</th>
+      <td>Reference Signal Received Quality.</td>
+    </tr>
+    <tr>
+      <th scope="row">SINR</th>
+      <td>Loarithmic value of SINR.</td>
+    </tr>
+    <tr>
+      <th scope="row">RSCP</th>
+      <td>The Received Signal Code Power Level of the cell that was scanned.</td>
+    </tr>
+    <tr>
+      <th scope="row">ECIO</th>
+      <td>Carrier to noise ratio in dB = measured Ec/lo value in dB.</td>
+    </tr>
+    <tr>
+      <th scope="row">Cell Identity</th>
+      <td>eNB ID (20 Bits) + Cell ID (8 Bits).</td>
+    </tr>
+    <tr>
+      <th scope="row">eNB ID</th>
+      <td>eNB ID.</td>
+    </tr>
+    <tr>
+      <th scope="row">Cell ID</th>
+      <td>Cell ID.</td>
+    </tr>
+    <tr>
+      <th scope="row">PCI ID</th>
+      <td>Physical Cell ID.</td>
+    </tr>
+    <tr>
+      <th scope="row">EARFCN</th>
+      <td>The E-UTRA-ARFCN of the cell that was scanned.</td>
+    </tr>
+    <tr>
+      <th scope="row">UL Bandwidth</th>
+      <td>Up Link Bandwidth.</td>
+    </tr>
+    <tr>
+      <th scope="row">DL Bandwidth</th>
+      <td>Down Link Bandwidth.</td>
+    </tr>
+    <tr>
+      <th scope="row">RSSI</th>
+      <td>Received Signal Strength Indication.</td>
+    </tr>
+     <tr>
+      <th scope="row">State</th>
+      <td>Connection State.</td>
+    </tr>
+     <tr>
+      <th scope="row">Band</th>
+      <td>Connected Band</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- LTE - DNS -->
+<h2 id="lte_dns">
+  <i class="fas fa-signal"></i>
+  LTE > DNS
+</h2>
+<p>This section allows you to setup LTE specific DNS setting.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        IPv4 DNS Server #1</br>
+        IPv4 DNS Server #2</br>
+        IPv4 DNS Server #3</br>
+   </th>
+      <td>
+  <ol>
+  <li>Each setting DNS Server has three options, including From ISP, User Defined and None.</li>
+  <li>When you select From ISP,the IPv4 DNS server IP is obtained from ISP.</li>
+  <li>When you select User Defined, the IPv4 DNS server IP is input by user.</li>
+  </ol>
+   </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- LTE - USSD -->
+<h2 id="lte_ussd">
+  <i class="fas fa-signal"></i>
+  LTE > USSD
+</h2>
+<p>This section allows control of the Unstructured Supplementary Service Data (USSD) according to 3GPP TS 22.090</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">USSD Input</th>
+      <td>Input the USSD you want to send</td>
+    </tr>
+    <tr>
+      <th scope="row">Responded</th>
+      <td>The response from operator according your USSD.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>Hint</h4>
+<p>Maximum Response Time: 120 seconds, determined by network.</p>
+<div class="line"></div>
+<!-- WiFi - Config -->
+<h2 id="wifi_config">
+  <i class="fas fa-wifi"></i>
+  WiFi > Config
+</h2>
+<p>This section allows you to set up the WiFi configuration</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <th scope="row">AP Enable</th>
+      <td>Turn on/off all WiFi Network. Select from Disable or Enable. The default is Enable.</td>
+    </tr>
+    <tr>
+      <th scope="row">WPS Button</th>
+      <td>Hardware button for WPS. Select the SSID you want to bind.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tx Power</th>
+      <td>The TX power setting specifies the strength of the signal.</td>
+    </tr>
+<!-- <tr>
+      <th scope="row">Mode</th>
+      <td>Select 802.11 Mode: 802.11b,802.11b,802.11g+n.</td>
+    </tr> -->
+  <tr>
+      <th scope="row">Enable</th>
+      <td>Turn on/off the SSID Network. Select from Disable or Enable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Isolate</th>
+      <td>Isolation is a technique for preventing mobile devices connected to an AP from communicating directly with each other.</td>
+    </tr>
+    <tr>
+      <th scope="row">HT Mode (HT Capability)</th>
+      <td>20M: Only 20MHz Operation is Supported,40M: Both 20MHz and 40MHz Operation is Supported.</td>
+    </tr>
+    <tr>
+      <th scope="row">Country Code</th>
+      <td>Select Country Area for supported Channels.</td>
+    </tr>
+    <tr>
+      <th scope="row">Name(SSID)</th>
+      <td>SSID is WiFi indentification. The maximum length is 32.</td>
+    </tr>
+    <tr>
+      <th scope="row">Hidden SSID</th>
+      <td>SSID hiding is the process of hiding the network name from being publicly broadcast.</td>
+    </tr>
+    <tr>
+      <th scope="row">Channel</th>
+      <td>Auto (Automatically select the best channel) or manually select channel number.</td>
+    </tr>
+     <tr>
+      <th scope="row">Encryption</th>
+      <td>None / WPA2-PSK-AES.</td>
+    </tr>
+    <tr>
+      <th scope="row">Passphrase</th>
+      <td>Strings with a legal length of 8 to 63 or a length of 64 should belong to [0-9 A-F a-f].</td>
+    </tr>
+    <tr>
+      <th scope="row">Key Update</th>
+      <td>0 means no update or 30~86400 seconds update period.</td>
+    </tr>
+    <tr>
+      <th scope="row">VLAN Subnet</th>
+      <td>Select the VLAN Subnet you want to bind.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Firewall - MAC Filter -->
+<h2 id="wifi_mac_filter">
+  <i class="fas fa-wifi"></i>
+  WiFi > MAC Filter
+</h2>
+<p>This section allows you to set up MAC Filter. After clicking edit button, you can edit your MAC address.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">MAC Address</th>
+      <td>Fill in your MAC address.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Note: Setting up MAC address, please use ":" colon symbol (e.g. xx : xx : xx : xx) or "-" hyphen symbol to mark (e.g. xx - xx - xx - xx).</p>
+<div class="line"></div>
+<!-- WiFi - Client List -->
+<h2 id="wifi_infomation">
+  <i class="fas fa-wifi"></i>
+  WiFi > Client List
+</h2>
+<p>This section allows you to see all the Connected WiFi Client List</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+      <th scope="row">MAC Address</th>
+      <td>MAC Address</td>
+    </tr>
+    <tr>
+      <th scope="row">IP Address</th>
+      <td>Client IP Address</td>
+    </tr>
+    <tr>
+      <th scope="row">Connected Time</th>
+      <td>Connected Time in Seconds.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- LAN - IPv4 -->
+<h2 id="lan_ipv4">
+ <i class="fas fa-exchange-alt"></i>
+ LAN > IPv4
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Item
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        LAN IPv4
+      </td>
+      <td>
+        <ul>
+          <li>IP Address:192.168.1.1</li>
+          <li>IP Mask:255.255.255.0</li>
+        </ul>
+        Both of them are default, you can change them according to your local IP Address and IP Mask.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        DHCP Server
+      </td>
+      <td>
+        <ul>
+          <li>Turn on/off DHCP Server Configuration.</li>
+          <li>Enable to make router can lease IP address to DHCP clients which connect to LAN.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        IP Address Pool
+      </td>
+      <td>
+        <ul>
+          <li>Define the beginning and the end of the pool of IP addresses which will lease to DHCP clients.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Strict Bind
+      </td>
+      <td>
+        <ul>
+          <li>Only allow the Statis IP Addresses to access the internet network.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Gateway
+      </td>
+      <td>
+        <p>The IP address of gateway which will assigned to the DHCP clients.</p>
+        <p>Default: Will use the NET IP address.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Lease Time
+      </td>
+      <td>
+        Time in minutes that will be assigned to a lease for DHCP client's address.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Anti-Spoofing
+      </td>
+      <td>
+        <ul>
+          <li>According the Static IP Addresses to identify and drop packets that have a false source address.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Manual DNS
+      </td>
+      <td>
+        <p>Manual DNS setting for DHCP client.</p>
+        <p>If not set then the server will assign the device LAN IP as DNS server.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Static IP Addresses
+      </td>
+      <td>
+        <p>DHCP server support static IP address assignment.</p>
+        <p>The static IP address can be added by clicking the <code>+Add Static IP Address</code> button.</p>
+        <p>Each static IP consist of mode(on/off), MAC and IP address.</p>
+        <ul>
+          <li><code>Mode</code>: Turn on/off the static IP address</li>
+          <li><code>MAC</code>: The MAC address of target host or PC</li>
+          <li><code>IP</code>: The desired IP address for target host or PC</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- LAN - IPv6 -->
+<h2 id="lan_ipv6">
+  LAN > IPv6
+</h2>
+<p>Select your type of IPv6, which shows Delegate Prefix from WAN or Static, and then set up DHCP Server Configuration, including Address Assign.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">LAN IPv6</th>
+      <td>
+       <ul>
+        <li>This section provides two types, including Delegate Prefix from WAN and Static. </li>
+        <li>Static Address: You need to input the static address when you select the static type.</li>
+       </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Delegate Prefix from WAN</th>
+      <td>Select this option to automatically obtain an IPv6 network prefix from the service provider or an uplink router.</td>
+    </tr>
+    <tr>
+      <th scope="row">Static</th>
+      <td>Select this option to configure a fixed IPv6 address for the cellular router?�s LAN IPv6 address.</td>
+    </tr>
+    <tr>
+      <th scope="row">Address Assign Setup</th>
+      <td>
+       <ul>
+        <li>Stateless: The cellular router uses IPv6 stateless auto configuration. RADVD (Router Advertisement Daemon) is enabled to have the cellular router send IPv6 prefix information in router advertisements periodically and in response to router solicitations.</li>
+        <li>Stateful: The cellular router uses IPv6 stateful auto configuration. The LAN IPv6 clients can obtain IPv6 addresses through DHCPv6.</li>
+       </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- LAN - VLAN -->
+<h2 id="lan_vlan">
+  <i class="fas fa-exchange-alt"></i>
+  LAN > VLAN
+</h2>
+<p>This section allows you to set up VLAN that provides a network segmentation system to distinguish the LAN clients and separate them into different LAN subnet for enhancing security and controlling traffic.</p>
+<p>The VLAN Mode allows you to select Off or Tag Base (802.1p).</p>
+<p>When VLAN Mode is set to Tag Base,the VLAN setting window will show up.</p>
+<p>The VLAN Isolation function allow administrator to saparate the different Subnet(VLAN).When it is on,the different Subnet(VLAN) user can not communication each other.</p>
+<p>For each row, the settings can be enabled or disabled by checkbox and select the Subnet and the VLAN ID (VID). The Subnet sets up the IP address and IP mask for the router so this router can communicate with the third party by this IP address and IP mask on this VLAN.Note: The NET1 can't remove it and fixes in the first column.)</p>
+<p>Furthermore, the Subnet provides DHCP Server function to allow the third party for the same VLAN to get IP address and IP mask. Therefore, you do not need to configure manually.</p>
+<p>(Note: The subnet information will show the Subnet window from the LAN catalogue.)</p>
+<p>There are two ports for Tag Base Mode, including LAN and LAN2. And one Router port which is a gate allows those ports to access internet or the router. The PVID and Tag Mode are for LAN and LAN2 ports. The PVID provides the untagged devices to communicate with third-party devices.(Note: The untagged devices mean not to support 802.1p VLANs.)</p>
+<p>The Tag Mode can be Trunk or Access. The Trunk allows to carry multiple 802.1p VLANs traffic. The Access allows the untagged devices to communicate with a specific 802.1p VLAN by assigned PVID</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>The VLAN mode is Off or Tag Base (802.1p VLAN).</td>
+    </tr>
+    <tr>
+      <th scope="row">VLAN Isolation</th>
+      <td>The VLAN Isolation is Off or On.</td>
+    </tr>
+    <tr>
+      <th scope="row">Enable</th>
+      <td>The assigned row of settings are enabled.</td>
+    </tr>
+    <tr>
+      <th scope="row">Subnet</th>
+      <td>Sets the IP address, IP mask and DHCP server.</td>
+    </tr>
+    <tr>
+      <th scope="row">VID</th>
+      <td>The VLAN ID range is from 1 to 4094.</td>
+    </tr>
+    <tr>
+      <th scope="row">Port</th>
+      <td>The port is shown to assign the port to a VLAN which the device is connected from LAN,LAN2 and Router.</td>
+    </tr>
+    <tr>
+      <th scope="row">PVID</th>
+      <td>
+     <ul>
+    <li>The PVID range from 1 to 4094</li>
+    <li>Sets the default VLAN ID for untagged devices connected to the port.</li>
+  </ul>
+   </td>
+    </tr>
+    <tr>
+      <th scope="row">Tag Mode</th>
+      <td>
+     <ul>
+    <li>The Trunk port setting is connected to another 802.1p VLAN aware switch or device.</li>
+    <li>The Access port setting is connected to a single untagged device.</li>
+  </ul>
+   </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- LAN - Subnet -->
+<h2 id="lan_subnet">
+  <i class="fas fa-exchange-alt"></i>
+  LAN > Subnet
+</h2>
+<p>This section allows you to get the information of IP Address and IP Mask and edit for the VLAN Subnets from DHCP Server Configuration.</p>
+<p>This Subnet setting is the same with <a href="#lan_ipv4">LAN&gt;IPv4</a> setting and follows with Tag Base Mode of VLAN to enable the function.</p>
+<div class="line"></div>
+<!-- IP Routing - Static Route -->
+<h2 id="ip_routing_static_route">
+  <i class="fas fa-random"></i>
+  IP Routing > Static Route
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>
+        Item
+      </td>
+      <td>
+        Description
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        The setting is for full network. Select from Off or On.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Settings
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        The setting is for the specific network. Select from Off or On.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        Set up each name for your running host or network.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Destination
+      </td>
+      <td>
+        Fill in the destination of a specific subnet or IP from network.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Gateway
+      </td>
+      <td>
+        Fill in the gateway address of your router.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Interface
+      </td>
+      <td>
+        Select the interface from LAN or Ethernet.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- IP Routing - Static Route -->
+<h2 id="policyRT">
+  <i class="fas fa-random"></i>
+  IP Routing > Policy Route
+</h2>
+<p>Note:<br />
+Policy Route is only enabled on active interfaces, but it is disabled on deactivated interfaces automatically.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>
+        Item
+      </td>
+      <td>
+        Description
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        The setting is for full network. Select from Disable or Enable.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Settings
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        The setting is for the specific network. Select from Disable or Enable.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        Set up each name for your running host or network.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Source(IP/MASK)
+      </td>
+      <td>
+        Fill in the source of a specific IP/MASK from network.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Destination(IP/MASK)
+      </td>
+      <td>
+        Fill in the destination of a specific IP/MASK from network.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Gateway
+      </td>
+      <td>
+        Fill in the gateway address of your router.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Interface
+      </td>
+      <td>
+        Select the interface from LAN or Ethernet.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- IP Routing - RIP -->
+<h2 id="ip_routing_rip">
+  <i class="fas fa-random"></i>
+  IP Routing > RIP
+</h2>
+<p>This section allows you to configure RIP and select the mode from Disable or Enable. The default is Disable.</p>
+<p>Note:<br />
+RIP (Routing Information Protocol, RFC 2453) is an Interior Gateway Protocol (IGP) and is commonly used in internal networks.
+It allows a router to exchange its routing information automatically with other routers, and allows it to dynamically adjust its routing tables and adapt to changes in the network.</p>
+<h4>IP Routing > RIP > General</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Select from Off or On to open or close RIP function.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute local routes</th>
+      <td>
+        Select from Off or On to open or close redistribute local routes.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute connected routes</th>
+      <td>
+        Select from Off or On to open or close redistribute connected routes.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute OSPF routes</th>
+      <td>
+        Select from Off or On to open or close redistribute OSPF routes.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute BGP routes</th>
+      <td>
+        Select from Off or On to open or close redistribute BGP routes.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>IP Routing > RIP > Interfaces</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Select from Off or On to use or not to use the RIP function in the interface.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Interface</th>
+      <td>
+        Select from eth1 (WAN Ethernet) or LAN.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Authentication</th>
+      <td>
+        Select from none or md5 to approve authentication. <br />
+        Note: <br />
+        Please offer Key and Key ID when you select md5 to use HMAC-MD5.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Key</th>
+      <td>
+        The key used for authentication (maxlength=16).
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Key ID</th>
+      <td>
+        The ID of the key used for authentication (1-255).
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Passive</th>
+      <td>
+        Select from Off or On to send out or not to send out RIP packets on this interface.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- IP Routing - OSPF -->
+<h2 id="ip_routing_ospf">
+  <i class="fas fa-random"></i>
+  IP Routing > OSPF
+</h2>
+<p>This section allows you to set up OSPF with three sub configurations, including General, Interfaces and Networks configuration.</p>
+<h4>IP Routing > OSPF > General</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Select from Off or On to open or close OSPF function.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute local routes</th>
+      <td>
+        Select from Off or On to open or close redistribute local routes.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute connected routes</th>
+      <td>
+        Select from Off or On to open or close redistribute connected routes.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute RIP routes</th>
+      <td>
+        Select from Off or On to open or close redistribute RIP routes.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute BGP routes</th>
+      <td>
+        Select from Off or On to open or close redistribute BGP routes.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>IP Routing > OSPF > Interfaces</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Select from Off or On to use or not to use the OSPF function in the interface.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Interface</th>
+      <td>
+        Select from eth1 (WAN Ethernet) or LAN.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Authentication</th>
+      <td>
+        Select from none or md5 to approve authentication. <br />
+        Note: <br />
+        Please offer Key and Key ID when you select md5 to use HMAC-MD5.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Key</th>
+      <td>
+        The key used for authentication (maxlength=16).
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Key ID</th>
+      <td>
+        The ID of the key used for authentication (1-255).
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Cost</th>
+      <td>
+        The cost for sending packets via this interface (0: OSPF defaults).
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Passive</th>
+      <td>
+        Select from Off or On to send out or not to send out OSPF packets on this interface.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>IP Routing > OSPF > Networks</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Select from Off or On to enable the network setting.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Prefix</th>
+      <td>
+        Set Prefix of the network
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Prefix Length</th>
+      <td>
+        Set Length of the prefix
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Area</th>
+      <td>
+        Routing area to which this interface belongs (0-65535, 0 means backbone)
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- IP Routing - BGP -->
+<h2 id="ip_routing_bgp">
+  <i class="fas fa-random"></i>
+  IP Routing > BGP
+</h2>
+<p>This section allows you to set up BGP with 4 NAVs, including General, Neighbors, Networks and Status.
+</p>
+<h4>IP Routing > BGP > General</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        <ul>
+          <li>Off：BGP function is off</li>
+          <li>On：BGP function is on.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">AS Number</th>
+      <td>number of the autonomous system (1 ~ 4294967295)</td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute local routes</th>
+      <td>
+        <ul>
+          <li>Off：Not redistribute local routes from the device's own routing table</li>
+          <li>On：Redistribute local routes from the device's own routing table</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Redistribute connected routes</th>
+      <td>
+        <ul>
+          <li>Off：Not redistribute connected routes to networks which are directly connected to the device</li>
+          <li>On：Redistribute connected routes to networks which are directly connected to the device</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>IP Routing > BGP > Neighbor</h4>
+<p>The neighbors sub configuration is used to configure all the BGP routers to peer with and the maximum neighbors is 16.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Select from Off or On to enable the neighbor setting
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">IP Address</th>
+      <td>Set IP address of the peer router</td>
+    </tr>
+    <tr>
+      <th scope="row">AS Number</th>
+      <td>Autonomous system number of the peer router</td>
+    </tr>
+    <tr>
+      <th scope="row">Multihop</th>
+      <td>Allow multiple hops between this router and the peer router</td>
+    </tr>
+    <tr>
+      <th scope="row">Authentication</th>
+      <td>Support authentication mechanism using MD5 algorithm</td>
+    </tr>
+    <tr>
+      <th scope="row">Authentication Key</th>
+      <td>The key used for authentication (maxlength=16)</td>
+    </tr>
+    <tr>
+      <th scope="row">Update Source Mode</th>
+      <td>Whether to specify the source address to this neighbor</td>
+    </tr>
+    <tr>
+      <th scope="row">Update Source Address</th>
+      <td>The source address to this neighbor</td>
+    </tr>
+  </tbody>
+</table>
+<h4>IP Routing > BGP > Networks</h4>
+<p>The networks sub configuration allows to add IP network prefixes that shall be distributed via BGP in addition to the networks that are redistributed from other sources as defined on the general sub configuration and the maximum neighbors is 16.
+</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Prefix of the network
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Prefix</th>
+      <td>
+        Length of the prefix
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>IP Routing > BGP > Status</h4>
+<p>The status nav is used to show the status of each enabled BGP neighbors.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Neighbor</th>
+      <td>IP address of the neibgbor</td>
+    </tr>
+    <tr>
+      <th scope="row">AS</th>
+      <td>Autonomous system number of the neighbor</td>
+    </tr>
+    <tr>
+      <th scope="row">MsgRcvd</th>
+      <td>The number of BGP message received</td>
+    </tr>
+    <tr>
+      <th scope="row">MsgSent</th>
+      <td>The number of BGP message sent</td>
+    </tr>
+    <tr>
+      <th scope="row">Uptime</th>
+      <td>Uptime of the connection with the neighbor</td>
+    </tr>
+    <tr>
+      <th scope="row">State</th>
+      <td>The state of the connection with the neighbor</td>
+    </tr>
+  </tbody>
+</table>
+<h4>IP Routing > BGP > Route</h4>
+<p>The route nav is used to show the learned routes.</p>
+<div class="line"></div>
+<!-- VPN - OpenVPN -->
+<h2 id="vpn_open_vpn">
+  <i class="fas fa-train"></i>
+  VPN > OpenVPN
+</h2>
+<p>From <code>Setting</code> tab, you can set up the connection of OpenVPN.</p>
+<p>From <code>Log</code> tab, the interface will be shown the status of connection to make you follow the suitation whenever is successful or fail connection.</p>
+<h4>OpenVPN Common Setting</h4>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th colspan="1" rowspan="1">
+        <p><span>Item</span></p>
+      </th>
+      <th colspan="1" rowspan="1">
+        <p><span>Description</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Turn on/off OpenVPN to select Disable or Enable.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>VPN Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <ul>
+          <li><span>Server: Tick to enable OpenVPN server tunnel.</span></li>
+          <li><span>Client: Tick to enable OpenVPN client tunnel. The default is Client.</span></li>
+          <li><span>Custom: This option allows user to use the .ovpn configuration file to quickly set up VPN tunnel with third-party server or use the OpenVPN advanced options to be compatible with other servers.</span></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>VPN Type</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <ul>
+          <li>Roadwarrior <b>(default)</b></li>
+          <li><span>Bridging: Bridging the VPN tunnel and LAN/VLAN</span></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Status </span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Display the status of OpenVPN.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>TLS Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from Disable or Enable for data security. The default is Disable.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Cipher</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The OpenVPN format of data transmission. &nbsp;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>IPv6 Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from Disable or Enable. The default is Disable. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Device</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from TUN or TAP. The default is TUN. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Protocol</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from UDP or TCP Client which depends on the application. The default is UDP.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Port</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Enter the listening port of remote side OpenVPN server.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>VPN Compression</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select Disable or Enable to compress the data stream. The default is Disable.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Authentication</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <ul class="c12 lst-kix_list_13-0">
+          <li class="c54 c32"><span>Select from two different kinds of authentication ways: Certificate or pkcs#12 Certificate.</span></li>
+          <li class="c32 c54"><span>The pkcs#12 option is only available on the VPN client mode.</span></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>OpenVPN Client Setting</h4>
+<p>This section allows you configure the OpenVPN client route and authentication files.</p>
+<p>The files could be imported by clicking Import button and the file should be downloaded from OpenVPN server.</p>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th colspan="1" rowspan="1">
+        <p><span>Item</span></p>
+      </th>
+      <th colspan="1" rowspan="1">
+        <p><span>Description</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Server Address</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Fill in WAN IP of OpenVPN server. &nbsp;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Route Client Networks</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from Off or On. This setting needs to match the server side. When enabled, the cellular router will auto apply the properly routing rules.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>Local Network</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Network</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        The local network which will be exported by OpenVPN.
+        When this option keep blank, the OpenVPN will export the LAN network automatically.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Netmask</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        The local netmask which will be exported by OpenVPN.
+        When this option keep blank, the OpenVPN will export the LAN netmask automatically.
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>NAT</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>1:1 NAT</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <ul >
+          <li ><span>Tick to enable NAT Traversal for OpenVPN. This item must be enabled when the router under NAT environment. </span></li>
+          <li ><span>Select from Off or On.</span></li>
+          <li ><span>When two routers&rsquo; LAN Subnet are same and create OpenVPN tunnels, this function should be turned on. </span></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>Client-Security</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Root CA</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The Certificate Authority file of OpenVPN server could be downloaded from OpenVPN server.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Cert</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The certification file is for OpenVPN client, which could be downloaded from OpenVPN server.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Key </span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The private key file is for OpenVPN client, which could be downloaded from OpenVPN server. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>P12</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The PKCS#12 file is for OpenVPN client, which could be downloaded from OpenVPN server.</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>OpenVPN Server Setting</h4>
+<p>This section allows you to configure the server status of VPN Mode.</p>
+<p>Note: When selecting the On option of Route Client Networks, the OpenVPN server will route the client traffic or not.</p>
+<p>You should fill in the client IP and netmask when this option is enabled.</p>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th colspan="1" rowspan="1">
+        <p><span>Item</span></p>
+      </th>
+      <th colspan="1" rowspan="1">
+        <p><span>Description</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>VPN Network</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The network ID for OpenVPN virtual network. &nbsp;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>VPN Netmask</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>The netmask for OpenVPN virtual network.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Roadwarrior: </span></p>
+        <p><span>Route Client Networks</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from Off or On. The OpenVPN server will route the client traffic or not. User should fill in the client IP and netmask when this option is enabled.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>Local Network</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Network</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        The local network which will be exported by OpenVPN.
+        When this option keep blank, the OpenVPN will export the LAN network automatically.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Netmask</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        The local netmask which will be exported by OpenVPN.
+        When this option keep blank, the OpenVPN will export the LAN netmask automatically.
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>NAT</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>1:1 NAT</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <ul>
+          <li><span>Tick to enable NAT Traversal for OpenVPN. This item must be enabled when router under NAT environment. </span></li>
+          <li><span>Select from Off or On. The default is Off. </span></li>
+          <li><span>When two routers&rsquo; LAN Subnet are same and create OpenVPN tunnels, this function is turned on. </span></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>Server- Server Security</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Root CA</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Create Root CA key. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Cert, Key and DH</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Create Cert, Key and DH key.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" rowspan="1">
+        <p><span>Server- User Security</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>User 1 - User 8 </span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>According to your requirement, you can create different kinds of user security key from User 1 to User 8.</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>OpenVPN Custom Setting</h4>
+<p>For Custom of VPN Mode, this section helps you use the .ovpn configuration file to quickly set up VPN tunnel with third-party server or use the OpenVPN advance options to be compatible with other servers.</p>
+<p>Note: When clicking the Import button, you can import third-party OpenVPN configuration that find out from Internet and save the document into your server or PC. </p>
+<p>After importing the file, the interface will show info/download buttons to display the information or downloading the file.</p>
+<p>For third-party OpenVPN configuration, suggest from http:
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th colspan="1" rowspan="1">
+        <p><span>Item</span></p>
+      </th>
+      <th colspan="1" rowspan="1">
+        <p><span>Description</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from Disable or Enable. The default is Disable.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>VPN Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from custom mode.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Custom Config</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Import OpenVPN configuration.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Username</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Fill in the username if the imported file has already set up the username. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Password</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Fill in the password if the imported file has already set up the password.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Status</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Display the connection status of OpenVPN, such as IP address and the connected time.</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- VPN - IPSec -->
+<h2 id="vpn_ipsec">
+  <i class="fas fa-train"></i>
+  VPN > IPSec
+</h2>
+<p>Internet Protocol Security (IPsec) is a secure network protocol suite that authenticates and encrypts the packets of data sent over an IPv4 network.</p>
+<p>The router provide the basic control items to control the IPsec overall behavior.</p>
+<table class="table table-bordered">
+  <thead>
+    <th>Item</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mode</td>
+      <td>
+        Running the IPsec VPN or not. <br />
+        Select from Disable or Enable. <br />
+        The default is Disable.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--
+<p><img src="./ipsec-general-setting.png" alt="IPsec general setting" title="" /></p>
+-->
+<h2>Overviews</h2>
+<p>There have five sub settings to setup the IPsec VPN.</p>
+<ol>
+<li><a href="#ipsec-connections">Connections</a></li>
+<li><a href="#ipsec-authentication-ids">Authentication IDs</a></li>
+<li><a href="#ipsec-x509-certificates">X.509 Certificates</a></li>
+<li><a href="#ipsec-ca-certificates">CA Certificates</a></li>
+<li><a href="#ipsec-global-advance-setting">Advance</a></li>
+</ol>
+<p>For the IPsec connection which be authenticated by pre-shared key, it only need to setup the <a href="#ipsec-connections">Connections</a> and <a href="#ipsec-authentication-ids">Authentication IDs</a></p>
+<p>For the IPsec connection which be authenticated by RSA or TLS, the settings must cover the four parts.</p>
+<h3 id="#ipsec-connections">Connections</h3>
+<p>This section provides the information of the IPsec connections.</p>
+<p>Each connection will show the <code>State</code>, <code>IKE information</code> and <code>Tunnel information</code>.</p>
+<p>In the default setting, the list of connections is empty.</p>
+<p>You can create the new connection by click <code>+ Add Connection</code> button.</p>
+<p>For the edit, you can click the <code>Phase 1</code> and <code>Phase 2</code> buttons to edit <a href="#ipsec-phase1-setting">IPsec phase 1</a> and <a href="#ipsec-phase2-setting">phase 2</a> setting respectively.</p>
+<p>For the <a href="#ipsec-advance-setting">connection advance settings</a> (like Dead peer detection, a.k.a DPD), you can click the <code>...</code> button to edit it.</p>
+<p>
+  <b>For IPSec reconneecting issue, you may consider the following changes.</b>
+</p>
+<ol>
+  <li>
+    Decrease the <code>DPD interval and retry</code> in
+    <a href="#ipsec-advance-setting">the connection advance settings</a> to early restart the connection.
+  </li>
+  <li>
+    Decrease the <code>Connecting Timeout</code> in
+    <a href="#ipsec-global-advance-setting">the advance setting</a> to speedup the time of reconneecting.
+  </li>
+  <li>
+    Change the protocol to <code>IKEv2</code> in <a href="#ipsec-phase1-setting">the Phase 1 setting</a>
+    and turn on the <code>Force NAT-T</code> option in <a href="#ipsec-advance-setting">the connection advance settings</a>.
+  </li>
+</ol>
+<!--
+<p><img src="./ipsec-connections.png" alt="IPsec connections" title="" /></p>
+-->
+<h4 id="ipsec-phase1-setting">IPsec Phase 1 Setting</h4>
+<table class="table table-bordered">
+  <thead>
+    <th>Item</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mode</td>
+      <td>
+        Select from Disable or Enable. <br />
+        The default is Disable.
+      </td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>Short name or description</td>
+    </tr>
+    <tr>
+      <td>Protocol</td>
+      <td>
+        Select from IKEv1 or IKEv2. <br />
+        The default is IKEv2.
+      </td>
+    </td>
+    <tr>
+      <td>Aggressive mode</td>
+      <td>
+        Select from Disable or Enable. <br />
+        The default is Disable. <br />
+        When this option be enabled, the connection will running on IKEv1 Aggreesive mode. <br />
+        Note: This option only work on IKEv1
+      </td>
+    </tr>
+    <tr>
+      <td>Auth Type</td>
+      <td>
+        Select from PSK (default), RSA, EAP-TLS. <br />
+        Note: The EAP-TLS is for IKEv2 only.
+      </td>
+    </tr>
+    <tr>
+      <td>Encryption</td>
+      <td>
+        The encyrption algorithm. <br />
+        Select from AES128 (default), AES192, AES256 or 3DES.
+      </td>
+    </tr>
+    <tr>
+      <td>Hash</td>
+      <td>
+        The integrity algorithm. <br />
+        Select from MD5, SHA1 (default) or SHA256.
+      </td>
+    </tr>
+    <tr>
+      <td>DH Group</td>
+      <td>
+        The Diffie Hellman Group. <br />
+        Select from 1(768 bit), 2(1024 bit), 5(1536 bit) (default), 14(2048 bit), 15(3072 bit), 16(4096 bit), 17(6144 bit) or 18(8192 bit).
+      </td>
+    </tr>
+    <tr>
+      <td>Lifetime</td>
+      <td>
+        How long the keying channel of a connection. <br />
+        Select from 30 minutes, 1 hour, 2 hours, 3 hours, 6 hours, 12 hours or 24 hours.
+      </td>
+    </tr>
+    <tr>
+      <td>Local Host</td>
+      <td>
+        The IP address of the router's public network interface. <br />
+        If this value is blank, the connection will automatically detect the correct IP address.
+      </td>
+    </tr>
+    <tr>
+      <td>Local ID</td>
+      <td>
+        The identification for authentication on local peer. <br />
+        Select from the created authentication IDs or empty.
+      </td>
+    </tr>
+    <tr>
+      <td>Remote Host</td>
+      <td>
+        The IP address of the peer gateway's public network interface. <br />
+        If this value is blank, the connection will act the server role to wait the incomming request.
+      </td>
+    </tr>
+    <tr>
+      <td>Remote ID</td>
+      <td>
+        The identification for authentication on remote peer. <br />
+        Select from the created authentication IDs or empty.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--
+<p><img src="./ipsec-phase1.png" alt="IPsec Phase 1 setting" title="" /></p>
+-->
+<h4 id="ipsec-phase2-setting">IPsec Phase 2 Setting</h4>
+<table class="table table-bordered">
+  <thead>
+    <th>Item</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Protocol</td>
+      <td>
+        Only support ESP.
+      </td>
+    </td>
+    <tr>
+      <td>Encryption</td>
+      <td>
+        The encyrption algorithm. <br />
+        Select from AES128 (default), AES192, AES256 or 3DES.
+      </td>
+    </tr>
+    <tr>
+      <td>Hash</td>
+      <td>
+        The integrity algorithm. <br />
+        Select from MD5, SHA1 (default) or SHA256.
+      </td>
+    </tr>
+    <tr>
+      <td>DH Group</td>
+      <td>
+        The Diffie Hellman Group. <br />
+        Select from 1(768 bit), 2(1024 bit), 5(1536 bit) (default), 14(2048 bit), 15(3072 bit), 16(4096 bit), 17(6144 bit) or 18(8192 bit).
+      </td>
+    </tr>
+    <tr>
+      <td>Lifetime</td>
+      <td>
+        How long a particular instance of a connection. <br />
+        Select from 30 minutes, 1 hour, 2 hours, 3 hours, 6 hours, 12 hours or 24 hours.
+      </td>
+    </tr>
+    <tr>
+      <td>Local Subnet</td>
+      <td>
+        The private subnet behind the router. <br />
+        The available formats are A.B.C.D, A.B.C.D/M, A.B::C.D or A.B::C.D/M<br />
+        If this value is blank, the connection will set it as the `Local Host` of Phase 1 setting. <br />
+        Note: This option only work on Policy-based IPsec VPN type.
+      </td>
+    </tr>
+    <tr>
+      <td>Remote Subnet</td>
+      <td>
+        The private subnet behind the peer gateway. <br />
+        The available formats are A.B.C.D, A.B.C.D/M, A.B::C.D or A.B::C.D/M<br />
+        If this value is blank, the connection will set it as the `Remote Host` of Phase 1 setting. <br />
+        Note: This option only work on Policy-based IPsec VPN type.
+      </td>
+    </tr>
+    <tr>
+      <td>Service</td>
+      <td>
+        Restrict the VPN traffic to the particular protocol only. <br />
+        Select from the Any, TCP, UDP or L2TP.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--
+<p><img src="./ipsec-phase2.png" alt="IPsec Phase 2 setting" title="" /></p>
+-->
+<h4 id="ipsec-advance-setting">IPsec Connection Advance Setting</h4>
+<table class="table table-bordered">
+  <thead>
+    <th>Item</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DPD interval</td>
+      <td>
+        The period time interval to detect dead peers. <br />
+        The default is 30 seconds.
+      </td>
+    </tr>
+    <tr>
+      <td>DPD retry</td>
+      <td>
+        The max number of retry of dead peer detection. <br />
+        The default is 5 times.
+      </td>
+    </tr>
+    <tr>
+      <td>Force NAT-T</td>
+      <td>
+        Force the IPSec IKE running on NAT-T mode. <br />
+        Which means the IKE negotiation will always use UDP port 4500 without NAT detection through UDP port 500. <br />
+        Default: OFF
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--
+<p><img src="./ipsec-advance.png" alt="IPsec advance setting" title="" /></p>
+-->
+<h3 id="ipsec-authentication-ids">Authentication IDs</h3>
+<p>This section provides the authenticaion ID set to authenticate the IPsec connections.</p>
+<p>In the default setting, the list of authentication ID is empty.</p>
+<p>You can create the new authentication ID by click <code>+ Add Authentication ID</code> button.</p>
+<p><strong>Note: Please apply the changes before edit the <a href="#ipsec-connections">connection</a> settings.</strong></p>
+<table class="table table-bordered">
+  <thead>
+    <th>Item</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>
+        The identification for authentication. <br />
+        It only work on PSK type.
+      </td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>
+        Select from PSK or RSA. <br />
+        The default is PSK. <br />
+        PSK: Use the pre-shared key to authenticate the connection. <br />
+        RSA: Use the certificate to authenticate the connection.
+      </td>
+    </td>
+    <tr>
+      <td>
+        Pre-shared Key / X.509 Certificate
+      </td>
+      <td>
+        The X.509 certificate for authentication. <br />
+        The certificate could be generated or imported by X.509 Certificates section.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--
+<p><img src="./ipsec-auth-ids.png" alt="IPsec authentication IDs" title="" /></p>
+-->
+<p>According the above options, there have some combination to authenticate the IPsec connection.</p>
+<table class="table table-bordered">
+  <thead>
+    <th>#</th>
+    <th>ID</th>
+    <th>Type</th>
+    <th>Pre-shared Key / X.509 Certificate</th>
+    <th>Comment</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td></td>
+      <td>PSK</td>
+      <td>password</td>
+      <td>
+        The default password for the PSK connections.
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>remote.ipsec</td>
+      <td>PSK</td>
+      <td>2wsx#EDC</td>
+      <td>
+        The password only for the PSK connection with <code>remote.ipsec</code> ID. <br />
+        Normally, this case will be used to authenticate peer gateway.
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>local.ipsec</td>
+      <td>PSK</td>
+      <td></td>
+      <td>
+        The identification for the connection.<br />
+        Normally, this case will be used to announe the ID of the router.
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>test</td>
+      <td>RSA</td>
+      <td><code>created X.509</code></td>
+      <td>
+        The ID field will be omitted, and use the common name(CN) of X.509 as the ID field.<br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="ipsec-x509-certificates">X.509 Certificates</h3>
+<p>This section provides the certificates set which could be used by IPsec authentication ID.</p>
+<p>Each certificate will show the <code>State</code> and <code>Subject</code> information.</p>
+<p>And providing the controlling buttons to let user could import, download or edit the certificate/key files.</p>
+<p><strong>Note: Please apply the changes before editing the <a href="#ipsec-authentication-ids">Authentication IDs settings</a>.</strong></p>
+<!--
+<p><img src="./ipsec-x509s.png" alt="IPsec X.509 Certificates" title="" /></p>
+-->
+<h3 id="ipsec-ca-certificates">CA Certificates</h3>
+<p>This section provides the CA certificates set which could check the X.509 certificate valid or not.</p>
+<p>There have one self-signed CA (generated by the router).</p>
+<p>And it support the user import the self-signed CAs to the router.</p>
+<p>The self-signed CA will help the router to verify the self-signed X.509 certificate which be
+imported on X.509 Certificates section.</p>
+<p>Each CA certificate will show the <code>State</code> and <code>Subject</code> information.</p>
+<p>And providing the controlling buttons to let user could download or edit the certificate/key files.</p>
+<!--
+<p><img src="./ipsec-cas.png" alt="IPsec CA Certificates" title="" /></p>
+-->
+<h2>IPsec Certificate</h2>
+<h3>Certificate Generation</h3>
+<p>There have two kinds of certificate could generated by router, one is self-signed CA, the other one is X.509.</p>
+<p>To generate the self-signed CA certificate:</p>
+<ol>
+<li>Navigate to <a href="#ipsec-ca-certificates">CA Certificates</a> tab.</li>
+<li>Click the Edit button to navigate the <a href="#certificate-setting">Certificate Setting</a> page.</li>
+<li>Fill up the information of the CA certificate.</li>
+<li>Click the <code>Generate Certificate</code> button and <code>Save</code>.</li>
+<li>Click the <code>Apply</code> button to apply the changes.</li>
+</ol>
+<p>To generate the X.509 certificate:</p>
+<ol>
+<li>Make sure the self-signed CA certificate generated.</li>
+<li>Navigate to <a href="#x.509-certificate">X.509 Certificates</a> tab.</li>
+<li>Add the new X.509 certificate by <code>+ Add X.509</code> button. (if not existed)</li>
+<li>Click the Edit button to navigate the <a href="#certificate-setting">Certificate Setting</a> page.</li>
+<li>Fill up the information of the X.509 certificate.</li>
+<li>Click the <code>Generate Certificate</code> button and <code>Save</code>.</li>
+<li>Click the <code>Apply</code> button to apply the changes.</li>
+</ol>
+<h4>Certificate Setting</h4>
+<table class="table table-bordered">
+  <thead>
+    <th>Item</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Country Name</td>
+      <td>
+        The 2-letter country code. e.g. US<br />
+        This option is required for certificate generation.
+      </td>
+    </tr>
+    <tr>
+      <td>State</td>
+      <td>
+        The state name. e.g. Some-State
+      </td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>
+        The location name. e.g. city-name
+      </td>
+    </tr>
+    <tr>
+      <td>Orgnization Name</td>
+      <td>
+        The orgnization name. e.g. company-name<br />
+        This option is required for certificate generation.
+      </td>
+    </tr>
+    <tr>
+      <td>Orgnization Unit Name</td>
+      <td>
+        The orgnization unit name.
+      </td>
+    </tr>
+    <tr>
+      <td>Common Name</td>
+      <td>
+        The host name associated with the certificate. e.g. example.com<br />
+        This option is required for certificate generation.
+      </td>
+    </tr>
+    <tr>
+      <td>E-mail</td>
+      <td>
+        The maintainer's E-mail.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--
+<p><img src="./ipsec-cert.png" alt="IPsec authentication IDs" title="" /></p>
+-->
+<h3>Certificate Importing</h3>
+<p>Same as the <a href="#certificate-generation">Certificate Generation</a>, the router support the CA and X.509 certificate importing.</p>
+<p>To import the CA certificate:</p>
+<ol>
+<li>Navigate to <a href="#ipsec-ca-certificates">CA Certificates</a> tab.</li>
+<li>Click the <code>+ Add CA certificate</code> button.</li>
+<li>Select the CA certificate file from browser window.</li>
+<li>When the file be selected and everything all right, the newly CA certificate will shown the CA certificate list with <code>Imported</code> state.</li>
+</ol>
+<p>To import the X.509 certificate:</p>
+<ol>
+<li>Navigate to <a href="#x.509-certificate">X.509 Certificates</a> tab.</li>
+<li>Click the <code>+ Add X.509</code> button. The list will pop up the balnk X.509 entry.</li>
+<li>Click the <code>Cert Import</code> button.</li>
+<li>Select the X.509 certificate file from browser window.</li>
+<li>When the file be selected and everything all right, the state should be <code>Cert or Key is missed</code>.</li>
+<li>Click the <code>Key Import</code> button.</li>
+<li>Select the X.509 key file from browser window.</li>
+<li>When the state shown <code>Imported</code>, the importing procedure is completed.</li>
+</ol>
+<h3>How to download the certificate</h3>
+<p>If the certificate be generated or imported. There have the download button to download each certificate and key file.</p>
+<p>Note: When the connection is authenticated by RSA or EAP-TLS, the user must to download the X.509 certificate, key and CA certificate, and import the files to the remote gateway.</p>
+<div class="line"></div>
+<h3 id="ipsec-global-advance-setting">Advance</h3>
+<table class="table table-bordered">
+  <thead>
+    <th>Item</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Retransmit Retry</td>
+      <td>
+        The retry time of retransmission. <br />
+        Default: 5.
+      </td>
+    </tr>
+    <tr>
+      <td>Retransmit Timeout (s)</td>
+      <td>
+        The base timeout (second) for each connecting trial. <br />
+        Default: 4 seconds
+      </td>
+    </tr>
+    <tr>
+      <td>Connecting Timeout (s)</td>
+      <td>
+        The summary of all retransmission timeouts.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- VPN - GRE -->
+<h2 id="vpn_gre">
+  <i class="fas fa-train"></i>
+  VPN > GRE
+</h2>
+<p>This section allows you to set GRE configuration. The default mode is off.</p>
+<p>
+  Generic Routing Encapsulation (GRE) is one of the available tunneling mechanisms which uses IP as the transport protocol and can be used for arrying many different passenger protocols.
+  The tunnels behave as virtual point-to-point links that have two endpoints identified by the tunnel source and tunnel destination addresses at each endpoint.
+</p>
+<ul>
+  <li>GRE Tunnel interface comes up as soon as it is configured</li>
+  <li>local endpoint does not bring the interface down if the remote endpoint is unreachable</li>
+  <li>no way to determine problems in the intervening network</li>
+  <li>Keepalives are used to solve this issue</li>
+</ul>
+<p>
+The GRE Tunnel Keepalive feature provides the capability of configuring keepalive packets to be sent over IP-encapsulated GRE tunnels. You can specify the rate at which keepalives will be sent and the number of times that a device will continue to send keepalive packets without a response before the interface becomes inactive. GRE keepalive packets may be sent from both sides of a tunnel or from just one side.
+</p>
+<p>
+  There are 2 entry for user to configure, please press 'Edit':
+</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Off or On to enable GRE.</td>
+    </tr>
+    <tr>
+      <th scope="row">Local Address</th>
+      <td>Set local address of the GRE tunnel.</td>
+    </tr>
+    <tr>
+      <th scope="row">Remote Address</th>
+      <td>Set remote address of the GRE tunnel.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tunnel Device Address</th>
+      <td>Set IP address of this GRE tunnel device.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tunnel Device Address Prefix</th>
+      <td>Set Prefix of the Tunnel Device Address.</td>
+    </tr>
+    <tr>
+      <th scope="row">Use Tunnel Key</th>
+      <td>Whether to use the key for identifying an individual traffic flow within a tunnel.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tunnel Key Number</th>
+      <td>The number of the tunnel key; default is '1234'.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- VPN - PPTP Server -->
+<h2 id="vpn_pptp_srever">
+  <i class="fas fa-train"></i>
+  VPN > PPTP Server
+</h2>
+<p>This section provides 2 sub configurations, including General Configuration and Clients Configuration.</p>
+<h4>VPN > PPTP Server > General</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Off or On to enable PPTP Server.</td>
+    </tr>
+    <tr>
+      <th scope="row">Server Address</th>
+      <td>IP addresses to be used at the local end of the tunneled PPP links between the server and the client.</td>
+    </tr>
+    <tr>
+      <th scope="row">Client Address Range</th>
+      <td>A list of IP addresses to assign to remote PPTP clients.</td>
+    </tr>
+  </tbody>
+</table>
+<h4>VPN > PPTP Server > Clients</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Off or On to set the client setting.</td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td>The username of this client.</td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td>The password of this client.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- VPN - L2TP -->
+<h2 id="vpn_l2tp">
+  <i class="fas fa-train"></i>
+  VPN > L2TP
+</h2>
+<h4>VPN&gt; L2TP &gt; Server Mode</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Item
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        Select from Off or On to set the client setting.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Auth
+      </td>
+      <td>
+        The authentication method for L2TP connection. Available options: PAP, CHAP, MS-CHAP, MS-CHAPv2
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Local IP
+      </td>
+      <td>
+        The virtual IP for L2TP server.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Remote begin IP
+      </td>
+      <td>
+        The begin address of L2TP client&#39;s IP pool.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Remote end IP
+      </td>
+      <td>
+        The end address of L2TP client&#39;s IP pool.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Username
+      </td>
+      <td>
+        The L2TP client&#39;s username. Could be used to add the newly client or update existed client.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Password
+      </td>
+      <td>
+        The L2TP client&#39;s password. Could be used to add the newly client or update existed client.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>VPN&gt; L2TP &gt; Client Mode</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>
+        Item
+      </td>
+      <td>
+        Description
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        Turn on/off this L2TP connection
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Server
+      </td>
+      <td>
+        The L2TP server address or hostname.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Auth
+      </td>
+      <td>
+        The authentication method for L2TP connection. Should same as L2TP server&#39;s auth type.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Username
+      </td>
+      <td>
+        The username for L2TP authentication.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Password
+      </td>
+      <td>
+        The password for L2TP authentication.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        NAT
+      </td>
+      <td>
+        Turn on to translate the LAN subnet IP to L2TP virtual IP.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Default route
+      </td>
+      <td>
+        Turn on to redirect all traffic to L2TP tunnel.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div></div>
+<!-- Firewall - Basic Rules -->
+<h2 id="firewall_basic_rules">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > Basic Rules
+</h2>
+<p>This section allows you to set the Basic Rules configuration.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">WAN Ping Blocking</th>
+      <td>Check IPv4 or IPv6 for blocking.</td>
+    </tr>
+    <tr>
+      <th scope="row">Guest network</th>
+      <td>Guest network doesn't allow access device.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Firewall - Port Forwarding -->
+<h2 id="firewall_port_forwarding">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > Port Forwarding
+</h2>
+<p>This section allows you to set up Port Forwarding and click edit button to configure.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Turn on/off Port Forwarding to select Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td>Descript the name of Port Forwarding.</td>
+    </tr>
+    <tr>
+      <th scope="row">Protocol</th>
+      <td>Select from UDP or TCP Client which depends on the application.</td>
+    </tr>
+    <tr>
+      <th scope="row">Source Port Begin</th>
+      <td>Fill in the beginning of source port.</td>
+    </tr>
+    <tr>
+      <th scope="row">Source Port End</th>
+      <td>Fill in the end of source port.</td>
+    </tr>
+    <tr>
+      <th scope="row">Destination IP</th>
+      <td>Fill in the current private destination IP.</td>
+    </tr>
+    <tr>
+      <th scope="row">Destination Port Begin</th>
+      <td>Fill in the beginning of private destination port.</td>
+    </tr>
+    <tr>
+      <th scope="row">Destination Port End</th>
+      <td>Fill in the end of private destination port.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Firewall - DMZ -->
+<h2 id="firewall_dmz">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > DMZ
+</h2>
+<p>This section allows you to set the DMZ configuration.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Host IP Address</th>
+      <td>Fill in your Host IP Address.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Firewall - Service PORT -->
+<h2 id="firewall_management_ip">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > Management IP
+</h2>
+<p>Some firewall function may block all user communication,assign Management IP Address to allow administrator to access the Router.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Management IP Address</th>
+      <td>IP Address. The default 0.0.0.0 means NOT assign.</td>
+    </tr>
+  </tbody>
+</table>
+</ol>
+<div class="line"></div>
+<!-- Firewall - Service PORT -->
+<h2 id="firewall_service_port">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > Service PORT
+</h2>
+<p>The setting is specified for Router access only.User set it to allow/disallow Router service access from/to outside WAN/inside LAN,for example: access Router Web service.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Action</th>
+      <td>Select from None,Drop or Accept.</td>
+    </tr>
+    <tr>
+      <th scope="row">Direction</th>
+      <td>Select from LAN INPUT,WAN INPUT,or ALL INPUT for inward direction; LAN OUTPUT, WAN OUTPUT, or ALL OUTPUT for outward direction.</td>
+    </tr>
+    <tr>
+      <th scope="row">Protocol</th>
+      <td>Select from TCP or UDP.</td>
+    </tr>
+    <tr>
+      <th scope="row">Port</th>
+      <td>Fill in service port number.For inward direction,it is device's port number.For outward direction,it is server's port number of outside WAN/inside LAN.</td>
+    </tr>
+  </tbody>
+</table>
+</ol>
+<div class="line"></div>
+<!-- Firewall - IP Filter -->
+<h2 id="firewall_ip_filter">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > IP Filter
+</h2>
+<p>This section allows you to configure IP Filter. After clicking edit button, you can edit your IP protocol, source/port and destination/port.</p>
+<ol>
+<li>The default is Disable Mode.</li>
+<li>The default List is Black.When set as Black List,the specific IP address/port in rule will be blocked.When set as White List,the specific IP address/port in rule will be accepted.</li>
+<li>Management IP Address is for White List only.Since White List will block all user communication except those has been assigned by rules,so it is better to assign a specific IP address for the administrator to access the Router, that's Management IP Address.</li>
+<li>Service Ports is for White List only.The setting is specified for Router access only.The user can set it to allow Router access outside WAN/inside LAN Service,for example: access outside WAN DNS service.Or allow user to acess Router service from outside WAN/inside LAN,for example: access Router Web service.</li>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Protocol</th>
+      <td>Select from All, ICMP, TCP or UDP.</td>
+    </tr>
+    <tr>
+      <th scope="row">Source IP</th>
+      <td>Fill in your source IP address.</td>
+    </tr>
+    <tr>
+      <th scope="row">Source Port</th>
+      <td>Fill in your source port.</td>
+    </tr>
+    <tr>
+      <th scope="row">Destination IP</th>
+      <td>Fill in your destination IP address.</td>
+    </tr>
+    <tr>
+      <th scope="row">Destination Port</th>
+      <td>Fill in your destination port.</td>
+    </tr>
+  </tbody>
+</table>
+<li>When selecting Enable Mode, the protocol is TCP. The source IP has IPv4 and IPv6 setting formats.</li>
+<li>For Source IP, there are three types to input your source IP that depends on your requirement, including single IP, IP with Mask or giving a range of IP. The following table provides some examples.</li>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">IP Format</th>
+      <th scope="col">Single IP</th>
+      <th scope="col">IP with Mask</th>
+      <th scope="col">Ranged IP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IPv4</td>
+      <td>192.168.0.123</td>
+      <td>
+   192.168.1.0/24</br>
+   192.168.1.0/255.255.255.
+   </td>
+      <td>192.168.1.1-192.168.1.123</td>
+    </tr>
+    <tr>
+      <td>IPv6</td>
+      <td>2607:f0d0:1002:51::4</td>
+      <td>2607:f0d0:1002:51::0/64</td>
+      <td>
+   2607:f0d0:1002:51::4-</br>
+   2607:f0d0:1002:51::aaaa
+   </td>
+    </tr>
+    <tr>
+      <td colspan=4>Note: Setting up a range of IP, please use "-" hyphen symbol to mark your ranged IP.</td>
+    </tr>
+  </tbody>
+</table>
+<li>For Source Port, there are two types to input your source port that depends on your requirement, including single port (e.g.1234) or giving a range of ports (e.g.1234:5678).</li>
+<p>Note: Setting up a range of source ports, please use ":" colon symbol to mark your ranged ports.</p>
+</ol>
+<div class="line"></div>
+<!-- Firewall - MAC Filter -->
+<h2 id="firewall_mac_filter">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > MAC Filter
+</h2>
+<p>This section allows you to set up MAC Filter. After clicking edit button, you can edit your MAC address.</p>
+<ol>
+<li>The default is Disable Mode.</li>
+<li>The default List is Black.When set as Black List,the specific MAC address in rule will be blocked.When set as White List,the specific MAC address in rule will be accepted.</li>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">MAC Address</th>
+      <td>Fill in your MAC address.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Note: Setting up MAC address, please use ":" colon symbol (e.g. xx : xx : xx : xx) or "-" hyphen symbol to mark (e.g. xx - xx - xx - xx).</p>
+</ol>
+<div class="line"></div>
+<!-- Firewall - URL Filter -->
+<h2 id="firewall_url_filter">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > URL Filter
+</h2>
+<p>This section allows you to set up URL Filter. After clicking edit button, you can edit the type of filter and information.</p>
+<p>Note: Please not include "https://" for the URL address in the Full Filter.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Filter</th>
+      <td>Select from Key or Full. The default is Key.</td>
+    </tr>
+    <tr>
+      <th scope="row">Key/Full</th>
+      <td>Fill in your Key/Full information.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Firewall - NAT -->
+<h2 id="firewall_nat">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > NAT
+</h2>
+<p>This section allows you to set NAT configuration.</p>
+<p>When NAT is on, the router will replace the source private IP address by its Internet public address for outgoing packets, and replace the destination Internet public address by private IP address for incoming packets.</p>
+<p>When NAT is off, the router will send the source LAN private IP address for outgoing packets and allow to receive the destination LAN private IP address for incoming packets.</p>
+<div class="line"></div>
+<!-- Firewall - IPS -->
+<h2 id="firewall_ips">
+  <i class="fas fa-shield-alt"></i>
+  Firewall > IPS
+</h2>
+<p>This section allows you to set IPS configuration. IPS prevents the system from being attacked by the Internet.</p>
+<p>The system allows to limit the max incoming connection number from WAN per source IP address to prevent system resource exhausted. Also, the system allows to limit the max incoming connection retry number during a specific time period from WAN per source IP address to prevent too many unexpected connections retry event from causing system busy.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Turn on/off IPS function (default: Off)</td>
+    </tr>
+    <tr>
+      <th scope="row">Checkbox</th>
+      <td>Select from Enable or Disable (default).</td>
+    </tr>
+    <tr>
+      <th scope="row">Total allow incoming connection number</th>
+      <td>The default number is 10.</td>
+    </tr>
+    <tr>
+      <th scope="row">Checkbox</th>
+      <td>Select from Enable or Disable (default).</td>
+    </tr>
+    <tr>
+      <th scope="row">Max incoming connection retry number</th>
+      <td>The default number is 20.</td>
+    </tr>
+    <tr>
+      <th scope="row">Duration time</th>
+      <td>The default time is 120 seconds.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - SNMP -->
+<h2 id="service_snmp">
+  <i class="fas fa-plus-circle"></i>
+  Service > SNMP
+</h2>
+<h4>Service &gt; SNMP &gt; Community</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>
+        Item
+      </td>
+      <td>
+        Description
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        Select from Disable or Enable to configure SNMP.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Community
+      </td>
+      <td>
+        Configure community setting with three options, including # 1, # 2 and #3.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Mode &nbsp;
+      </td>
+      <td>
+        Select from Disable or Enable.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        Name each community.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Access
+      </td>
+      <td>
+        Select from Read-Only or Read-Write.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Service &gt; SNMP &gt; SNMP v3 User configuration</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Item
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        Select from Disable or Enable to configure SNMP. The default is Disable.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        Fill in your name.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Auth Mode &nbsp;
+      </td>
+      <td>
+        Select from Authentication or Privacy.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Authentication Password
+      </td>
+      <td>
+        Fill in your authentication password.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Authentication Protocol
+      </td>
+      <td>
+        Select from MD5 or SHA.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Privacy Password
+      </td>
+      <td>
+        Fill in your privacy password.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Privacy Protocol
+      </td>
+      <td>
+        Select from DES or AES.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Access
+      </td>
+      <td>
+        Select from Read-Only or Read-Write.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Service &gt; SNMP &gt; SNMP trap configuration</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Item
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        Select from Disable or Enable. The default is Disable.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Community Name
+      </td>
+      <td>
+        Fill in your community name.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Destination
+      </td>
+      <td>
+        The destination (domain name/IP) of remote SNMP trap server. &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - TR069 -->
+<h2 id="service_tr069">
+  <i class="fas fa-plus-circle"></i>
+  Service > TR069
+</h2>
+<p>This section allows you to set up TR069 client configuration.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">ACS URL</th>
+      <td>Fill in the URL address of ACS(Auto-Configuration Server).</td>
+    </tr>
+    <tr>
+      <th scope="row">ACS Username</th>
+      <td>Fill in the ACS username to authenticate the CPE (this router) when connecting to the ACS.</td>
+    </tr>
+    <tr>
+      <th scope="row">ACS Password</th>
+      <td>Fill in the ACS password to authenticate the CPE (this router) when connecting to the ACS.</td>
+    </tr>
+    <tr>
+      <th scope="row">Periodic Inform</th>
+      <td>Select from Disable or Enable. The default is Disable. The CPE reports the status to the ACS when enabling a period of time set.</td>
+    </tr>
+    <tr>
+      <th scope="row">Periodic Inform Interval(Sec)</th>
+      <td>Fill in the periodic time. The CPE reports to ACS the status according to your duration in seconds of the interval set.</td>
+    </tr>
+    <tr>
+      <th scope="row">Connection Request Username</th>
+      <td>Fill in the connection request username to authenticate the ACS if the ACS attempts to communicate with the CPE.</td>
+    </tr>
+    <tr>
+      <th scope="row">Connection Request Password</th>
+      <td>Fill in the connection request password to authenticate the ACS if the ACS attempts to communicate with the CPE.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - Dynamic DNS -->
+<h2 id="service_dynamic_dns">
+  <i class="fas fa-plus-circle"></i>
+  Service > Dynamic DNS
+</h2>
+<p>This section allows you to set up Dynamic DNS.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Turn on/off this function to select Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Service Provider</th>
+      <td>Select the Service Provider of Dynamic DNS.</td>
+    </tr>
+    <tr>
+      <th scope="row">Host Name</th>
+      <td>Fill in your registered Host Name from Service Provider.</td>
+    </tr>
+    <tr>
+      <th scope="row">Token ID</th>
+      <td>Fill in your Token ID from Service Provider.</td>
+    </tr>
+    <tr>
+      <th scope="row">Host Secret ID</th>
+      <td>Fill in your Secret ID from Service Provider.</td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td>Fill in your registered username from Service Provider.</td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td>Fill in your registered password from Service Provider.</td>
+    </tr>
+    <tr>
+      <th scope="row">Update Period Time (Sec)</th>
+      <td>Fill in "0" to mean 30 days.</td>
+    </tr>
+    <tr>
+      <th scope="row">IP Address Selection</th>
+      <td>Select either Internet IP or WAN IP.</td>
+    </tr>
+  </tbody>
+</table>
+<p>There are six options of Service Provider as below to explain the information.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Service Provider</th>
+      <th scope="col">dynv6.com</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host Name</th>
+      <td>Register hostname, e.g. tester.dynv6.net</td>
+    </tr>
+    <tr>
+      <th scope="row">Token ID</th>
+      <td>The token ID, e.g. v_ABjMMQxeAnWv5UwtuVn1QBriynzq</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Service Provider</th>
+      <th scope="col">www.nsupdate.info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host Name</th>
+      <td>Register hostname, e.g. tester.nsupdate.info</td>
+    </tr>
+    <tr>
+      <th scope="row">Host Secret ID</th>
+      <td>The Host Secret ID, e.g. e2AMDsLmVF</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Service Provider</th>
+      <th scope="col">www.duckdns.org</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host Name</th>
+      <td>Register hostname, e.g. tester.duckdns.org</td>
+    </tr>
+    <tr>
+      <th scope="row">Token ID</th>
+      <td>The token ID, e.g.12345678-de49-4e97-a33c-98b159aead2b</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Service Provider</th>
+      <th scope="col">no-ip.com</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host Name</th>
+      <td>Register hostname, e.g. tester.hopto.org</td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td>Register username.</td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td>Register password.</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Service Provider</th>
+      <th scope="col">freedns.afraid.org</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host Name</th>
+      <td>Register hostname, e.g. tester.mooo.com</td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td>Register username.</td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td>Register password.</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Service Provider</th>
+      <th scope="col">dyndns.org</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host Name</th>
+      <td>Register hostname, e.g. tester.dyns.com</td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td>Register username.</td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td>Register password.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - VRRP -->
+<h2 id="service_vrrp">
+  <i class="fas fa-plus-circle"></i>
+  Service > VRRP
+</h2>
+<p>This section allows you to configure VRRP.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable. The default is Disable.</td>
+    </tr>
+    <tr>
+      <th scope="row">Group ID</th>
+      <td>Specify which VRRP group of this router belong to (1-255). The default is 1.</td>
+    </tr>
+    <tr>
+      <th scope="row">Priority</th>
+      <td>Enter the priority value from 1 to 254. The larger value has higher priority. The default is 100.</td>
+    </tr>
+    <tr>
+      <th scope="row">Virtual IP</th>
+      <td>
+        <ul>
+          <li>Each router in the same VRRP group must have the same virtual IP address. The default is 0.0.0.0.</li>
+          <li>This virtual IP address must belong to the same address range as the real IP address of the interface.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - MQTT -->
+<h2 id="service_mqtt">
+  <i class="fas fa-plus-circle"></i>
+  Service > MQTT
+</h2>
+<p>This section makes you configure MQTT which allows the MQTT client to send the message within specific topic or channel. By default, the router does not allow anonymous to read/write the MQTT topic or channel. Thus, you need to create the account with username and password for MQTT client in the web UI.</p>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th colspan="1" rowspan="1">
+        <p><span>Item</span></p>
+      </th>
+      <th colspan="1" rowspan="1">
+        <p><span>Description</span></p>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Mode</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select from Disable or Enable. The default is Disable.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Port</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Fill in the port number of MQTT application. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Manage Users</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Create the users and show all users&rsquo; names. Allow each user to delete their name. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Username</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Fill in the username of manage user.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Password</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Fill in the password of manage user.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>ACLs</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Allow to specify what topic should be limited.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>User</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Select the users and identify their authority to read or write the MQTT topic/channel. </span></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="1">
+        <p><span>Topic</span></p>
+      </td>
+      <td colspan="1" rowspan="1">
+        <p><span>Name the topic of MQTT message. </span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - UPnP -->
+<h2 id="service_upnp">
+  <i class="fas fa-plus-circle"></i>
+  Service > UPnP
+</h2>
+<p >This section allows you to set up UPnP confirguration to select the mode from Disable or Enable. The default UPnP is enabled for the cellular router.</p>
+<p>Note: UPnP&trade; (Universal Plug and Play) is a set of protocols that allows a PC to automatically discover other UPnP devices (anything from an Internet gateway device to a light switch), retrieve an XML description of the device and its services, control the device, and subscribe to real-time event notification.</p>
+<p>PCs using UPnP can retrieve the cellular router&#39;s WAN IP address, and automatically create NAT port maps. &nbsp;This means that applications that support UPnP, and are used with UPnP enabled cellular router, will not need application layer gateway support on the cellular router to work through NAT. &nbsp;</p>
+<div class="line"></div>
+<!-- Service - SMTP -->
+<h2 id="service_smtp">
+  <i class="fas fa-plus-circle"></i>
+  Service > SMTP
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Item
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        Select from Disable or Enable. The default is Disable.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Server
+      </td>
+      <td>
+        The email will be sent through the server.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Port
+      </td>
+      <td>
+        There are three ports for SMTP communication between mail servers.
+        <ul>
+          <li><b>Port 25</b>: Use TCP port 25 without encryption.</span></li>
+          <li><b>Port 465</b>: SMTP connections secured by SSL. </span></li>
+          <li><b>Port 587</b>: SMTP connections secured by TLS. &nbsp;</span></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Username/Password
+      </td>
+      <td>
+        Fill in your username and password as the same your server.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - IP Alias -->
+<h2 id="service_ip_alias">
+  <i class="fas fa-plus-circle"></i>
+  Service > IP Alias
+</h2>
+<p>This section allows you to set IP Alias configuration.</p>
+<p>IP Alias is associating more than one IP address to a network interface. With IP Alias, one node on a network can have multiple connections to a network, each serving a different purpose.</p>
+<p>IP Alias can be used to provide multiple network addresses on a single physical interface.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Off or On to enable the IP Alias. </td>
+    </tr>
+    <tr>
+      <th scope="row">Entries</th>
+      <td>The setting can be edited or deleted the existed entries.</td>
+    </tr>
+    <tr>
+      <th scope="row">Add/Edit IP Alias Entry</th>
+      <td>
+        <ul>
+          <li>Mode: select from Off or On to use or not use this entry. </li>
+          <li>Interface: the interface you want to provide the additional address.</li>
+          <li>Addr: the IP address.</li>
+          <li>Mask: the network mask.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Service - QoS -->
+<h2 id="service_qos">
+  <i class="fas fa-plus-circle"></i>
+  Service > QoS
+</h2>
+<p>QoS (Quality of Service) refers to a network ability to achieve maximum bandwidth and allow minimum bandwidth. It guarantees the minimum and limit the maximum bandwidth for certain class of traffic. The QoS configuration has three parts, including Interface bandwidth, QoS and Status.</p>
+<ul>
+  <li>Interface bandwidth allows user to configure the max bandwidth of the specific interface.</li>
+  <li>QoS configuration allows user to classify the traffic. Once classified, the traffic will have the guarantee minimum and limit maximum bandwidth.</li>
+  <li>Status allows user to monitor the dynamic bandwidth usage.</li>
+</ul>
+    <h4>QoS > Interface Bandwidth</h4>
+<p>User can assign Bandwidth for each interface. The Bandwidth unit is kilobits per second.</p>
+<p>To prevent guaranteed traffic loss, the assigned bandwidth is better not to exceed the real bandwidth because the allowable traffic quantity may exceed the real bandwidth.</p>
+<ul>
+  <li>Each Interface has its bandwidth management and in charge to management the traffic egress from the interface.</li>
+  <li>Interface with Upstream selection is WAN(Upstream) interface.It is in charge to managemnt the traffic egree out to internet from the interface.</li>
+  <li>Interface with Upstream and Downstream selection is LAN(Downstream) interface.It is in charge to managemnt the traffic egree out to LAN from the interface.</li>
+  <li>The Upstream selection in LAN interface allow user to decide whether the traffic ingress from the interface to be mangmeneted by WAN interface or not.</li>
+</ul>
+ <h4>QoS > QoS</h4>
+<p>You can select QoS tab to show an overall view for QoS configuration.</p>
+<p>At right side of window, there are three buttons.</p>
+<p>Edit button allows you to edit QoS Entry and configure QoS settings.</p>
+<p>Up/Down arrow button allow you to adjust priority of the QoS entry. The first QoS entry is the highest priority.</p>
+<p>The QoS entry configuration page has three parts for classify traffic, assign bandwidth, and group IP address bandwidth.</p>
+<ul>
+  <li>Classify traffic by following items:</li>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+      <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable QoS.</td>
+    </tr>
+    <tr>
+      <th scope="row">Name</th>
+      <td>The setting can be edited or deleted the existed entries.</td>
+    </tr>
+    <tr>
+      <th scope="row">Direction</th>
+      <td>
+        <ul>
+          <li>When selecting Upstream for LAN to WAN traffic, the Port Begin/End is for public server.</li>
+          <li>When selecting Downstream for WAN to LAN traffic, the Port Begin/End is for public server.</li>
+          <li>When selecting Upstream (LAN server) for WAN to LAN traffic, the Port Begin/End is for LAN server.</li>
+          <li>When selecting Downstream (LAN server) for LAN to WAN traffic, the Port Begin/End is for LAN server.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Interface/Min rate(Result)/Max rate</th>
+      <td>
+        <ul>
+          <li> For traffic from LAN to WAN by selecting Direction, the egress interfaces WAN(Upstream) show up</li>
+          <li> For traffic from WAN to LAN by selecting Direction, the egress interfaces LAN(Downstream) show up</li>
+          <li> Max Rate: The unit is kilobits per second.It is the limit bandwidth.</li>
+          <li> Min Rate: The unit is kilobits per second. Min Rate guarantee the minimum bandwidth.</li>
+          <li> Result : It show the per IP Address Min Rate when Bandwidth divided for each IP Address selected.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">IPv4v6 Address</th>
+      <td>
+        <p>Choose four types to set address format, including All, Single, Subnet, and Range.</p>
+        <ul>
+          <li>All is for none.</li>
+          <li>Single is for single IP address.</li>
+          <li>Subnet is for IP address with subnet mask bit.</li>
+          <li>Range is for the specified range between two IP addresses.</li>
+            </ul>
+        <p></p>
+        <p>Hint: When [RANGE] is selected, compare the difference from left to right octet and find out different octet for setting the specified range of IP address. All other parts after different octet would be ignored.</p>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Bandwidth divided for each IP Address</th>
+      <td>
+        <ul>
+          <li> This feature is used for multiple user which would like to share the same Max rate but still have their Min rate,it show up ONLY when IP Type is Subnet or Range.</li>
+          <li> When selected, the bandwidth assigned by Min Rate will be divided by the number of IP addresses and it show on the Result field of the selected Interface</li>
+          <li> The subnet mask bit in IP Type Subnet is octet boundary and the number of IP addresses is one octet too, 256, from subnet mask bit to subnet mask plus eight bit.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Max. Number of Simultaneous Users</th>
+      <td>
+        <ul>
+          <li> This feature is used to increase the Min Rate for each IP address and it show up ONLY when Bandwidth divided for each IP Address selected.</li>
+          <li> The number of IP Address assigned in IPv4v6 Address may associate with DHCP IP range,hence if the Max. Number of Simultaneous Users is far smaller than it,then set the vlaue can increase the Min Rate for each IP Address effectively.</li>
+          <li> When selected and assign the value, the bandwidth assigned by Min Rate will be divided by the value and it show on the Result field of the selected Interface</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Protocol</th>
+      <td>
+        <ul>
+          <li>All is for none.</li>
+          <li>UDP is for User Datagram Protocol.</li>
+          <li>TCP is for Transmission Control Protocol.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Port Begin/Port End</th>
+      <td>the TCP/UDP service port</td>
+        </tr>
+    <tr>
+      <th scope="row">VLAN follow vid of</th>
+      <td>
+  <ul>
+          <li>NONE.</li>
+          <li>NET1 - NET8.</li>
+            </ul>
+  <p><p/>
+        <p>Note:For NET1 to NET8, make sure the related subnet is enabled at VLAN->Tag Base. The VLAN ID, vid, will be the VID field of the related Subnet at VLAN->Tag Base.</p>
+          </td>
+        </tr>
+    <tr>
+      <th scope="row">COS (Class of Service or 802.1q)</th>
+      <td>NONE or 0~7. It is class of service for VLAN.</td>
+        </tr>
+      </tbody>
+    </table>
+</ul>
+ <h4>QoS > Status</h4>
+  <ul>
+    <li>Refresher Setting select the showed content of bandwidth usage by following items:</li>
+ <ul>
+   <li>Refresh rate: how long the browser will update the showed content once.</li>
+   <li>Show detail bandwidth for each IP address: show each IP bandwidth usage.</li>
+   <li>Apply Refresh Setting button: press this button to take above new setting effect.</li>
+    </ul>
+    <li>Data part is the content of bandwidth usage.</li>
+  </ul>
+<div class="line"></div>
+<!-- Management - Identification -->
+<h2 id="management_identification">
+  <i class="fas fa-cog"></i>
+  Management > Identification
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Active Image Partition</th>
+      <td>show the active image partition: a or b</td>
+    </tr>
+    <tr>
+      <th scope="row">Model Name</th>
+      <td>show the model name of the device</td>
+    </tr>
+    <tr>
+      <th scope="row">LAN Ethernet MAC Address</th>
+      <td>show the MAC address of LAN interface</td>
+    </tr>
+    <tr>
+      <th scope="row">WAN Ethernet MAC Address</th>
+      <td>show the MAC address of WAN interface</td>
+    </tr>
+    <tr>
+      <th scope="row">WiFi 2.4G MAC Address</th>
+      <td>show the MAC address of WiFi 2.4G interface</td>
+    </tr>
+    <tr>
+      <th scope="row">Bootloader Version</th>
+      <td>show the bootloader version currently running on the device</td>
+    </tr>
+    <tr>
+      <th scope="row">Software Version</th>
+      <td>show the software version currently running on the device</td>
+    </tr>
+    <tr>
+      <th scope="row">Software MCSV</th>
+      <td>show the software MCSV of the running firmware</td>
+    </tr>
+    <tr>
+      <th scope="row">Hardware MCSV</th>
+      <td>show the harware MCSV of the device</td>
+    </tr>
+    <tr>
+      <th scope="row">Dual Image A MCSV</th>
+      <td>show the MCSV at the dual image slot A of the device</td>
+    </tr>
+    <tr>
+      <th scope="row">Dual Image B MCSV</th>
+      <td>show the MCSV at the dual image slot B of the device</td>
+    </tr>
+    <tr>
+      <th scope="row">Serial Number</th>
+      <td>show the serial number of the device</td>
+    </tr>
+    <tr>
+      <th scope="row">Modem Firmware Version</th>
+      <td>show the modem firmware version of the device</td>
+    </tr>
+    <tr>
+      <th scope="row">IMEI</th>
+      <td>show the IMEI - International Mobile Equipment Identity</td>
+    </tr>
+    <tr>
+      <th scope="row">Uptime</th>
+      <td>show the current system uptime</td>
+    </tr>
+    <tr>
+      <th scope="row">FOTA check time</th>
+      <td>Show the FOTA check time.</td>
+    </tr>
+    <tr>
+      <th scope="row">FOTA Software Version</th>
+      <td>Show the FOTA software version.</td>
+    </tr>
+    <tr>
+      <th scope="row">FOTA next check time</th>
+      <td>Show the FOTA next check time.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Management - Administration -->
+<h2 id="management_administration">
+  <i class="fas fa-cog"></i>
+  Management > Administration
+</h2>
+<h4>Management > Administration > System Setup</h4>
+<p>This section allows you to set up the name of system and change your new password. For the
+Session TTL, you can set up what duration of time will be logout. If you don’t need to have this
+timeout limitation, you can fill in “0“(Zero).</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Model Name</th>
+      <td>the model name of the device</td>
+    </tr>
+    <tr>
+      <th scope="row">Session TTL</th>
+      <td>minutes, 0 means no timeout</td>
+    </tr>
+  </tbody>
+</table>
+<h4>Management > Administration > Admin Password</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">New Password</th>
+      <td>type the password you want to change</td>
+    </tr>
+    <tr>
+      <th scope="row">Retype to confirm</th>
+      <td>retype the password you want to change</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Management - Contacts / On Duty -->
+<h2 id="management_contacts">
+  <i class="fas fa-cog"></i>
+  Management > Contacts / Duty Schedule
+</h2>
+<h4>Contacts</h4>
+<p>Contacts allows you to create the groups, and add the users. </p>
+<ul>
+  <li>+Add Group: Please fill out group name.</li>
+  <li>+Add User: Please fill out Name/Phone/E-Mail/Groups.</li>
+</ul>
+<h4>Duty Schedule</h4>
+<p>Please select duty date for every group. The trust and responsible groups can receive alarm, perform SMS actions and input SMS alarm.</p>
+<div class="line"></div>
+<!-- Management - SSH -->
+<h2 id="management_ssh">
+  <i class="fas fa-cog"></i>
+  Management > SSH
+</h2>
+<p>Secure Shell (SSH) allows user to configure system via a secure channel. User can configure system from either public domain or local LAN.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>Select from Disable or Enable SSH function.</td>
+    </tr>
+    <tr>
+      <th scope="row">LAN Server Port</th>
+      <td>The LAN side TCP port number listened by SSH server.</td>
+    </tr>
+    <tr>
+      <th scope="row">WAN Server Port</th>
+      <td>The WAN side TCP port number listened by SSH server.</td>
+    </tr>
+    <tr>
+      <th scope="row">Access Control</th>
+      <td>
+   Allow All: Any client who own the IPv4v6 Address can reach system is able to connect system.</br>
+   Allow specified IPv4v6 Address below: Only those configured IPv4v6 Address client are allowed to connect system.</br>
+   </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Management - Administration -->
+<h2 id="management_fail2ban">
+  <i class="fas fa-cog"></i>
+  Management > Fail2Ban
+</h2>
+<p>Fail2Ban is an intrusion prevention feature that protects the device from brute-force login attacks.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        Item
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Mode
+      </td>
+      <td>
+        Select from Disable or Enable. The default is Enable.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Retry
+      </td>
+      <td>
+        The limit for maximum login retries/attempts.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Ban Time(s)
+      </td>
+      <td>
+        The banned time(s) for user or IP when it exceeded the retry limit.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Management - Web -->
+<h2 id="management_web">
+  <i class="fas fa-cog"></i>
+  Management > Web
+</h2>
+<p>
+  This section allows user to change the HTTP port via HTTP.
+  As long as pressing Apply, the web daemon will restart the new configuration, and you won’t see the response at the web browser.
+</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mode</th>
+      <td>
+        Off: offer nothing</br>
+        HTTP: offer HTTP via LAN</br>
+        HTTPS: offer HTTPS via LAN/WAN</br>
+        Both:: offer HTTP via LAN and offer HTTPS via LAN/WAN
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">HTTP Port</th>
+      <td>The TCP port listened by HTTP daemon. </td>
+    </tr>
+    <tr>
+      <th scope="row">HTTPS Port</th>
+      <td>The TCP port listened by HTTPS daemon.</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+After pressing Apply button, the device will apply immediately and give you some hints "Please use new port to access latter".
+For example, port 3000.
+</p>
+<div class="line"></div>
+<!-- Management - Telnet -->
+<h2 id="management_telnet">
+  <i class="fas fa-cog"></i>
+  Management > Telnet
+</h2>
+<p>This section allows user to choose whether offet the telnet via LAN/WAN.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">LAN</th>
+      <td>whether or not offer the telnet service.</td>
+    </tr>
+    <tr>
+      <th scope="row">WAN</th>
+      <td>whether or not offer the telnet service.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Management - Firmware -->
+<h2 id="management_firmware">
+  <i class="fas fa-cog"></i>
+  Management > Firmware
+</h2>
+<p>This section provides you to upgrade the firmware of the device</p>
+<ol>
+  <li>Click <mark>Select the firmware to upgrade</mark> button to choose your current firmware version in your PC.</li>
+  <li>Select <mark>Upgrade</mark> button to update.</li>
+  <li>After upgrading successfully, please reboot the device.</li>
+</ol>
+<div class="line"></div>
+<!-- Management - Configuration -->
+<h2 id="management_configuration">
+  <i class="fas fa-cog"></i>
+  Management > Configuration
+</h2>
+<p>This section supports you to export or import the configuration file.</p>
+<ul>
+  <li>Click <mark>Backup the running configurations</mark> button to export your current configurations. </li>
+  <li>Click <mark>Select the configuration file to restore</mark> button to import the configuration file.</li>
+</ul>
+<div class="line"></div>
+<!-- Management - Load Factory -->
+<h2 id="management_load_factory">
+  <i class="fas fa-cog"></i>
+  Management > Load Factory
+</h2>
+<p>
+  This section supports you to load the factory default configuration and restart the device immediately.
+  You can click the <mark>Load Factory and Restart</mark> button.
+</p>
+<div class="line"></div>
+<!-- Management - Restart -->
+<h2 id="management_restart">
+  <i class="fas fa-cog"></i>
+Management > Restart
+</h2>
+<p>
+  This section allows you to click <mark>Restart</mark> button to restart the device.
+</p>
+<div class="line"></div>
+<!-- Management - Schedule Reboot -->
+<h2 id="management_schedule_reboot">
+  <i class="fas fa-cog"></i>
+Management > Schedule Reboot
+</h2>
+<p>The setting allows you to schedule the reboot time regularly. </p>
+<ul>
+  <li>Schedule Type – Interval</li>
+  <li>Schedule Type - Per Day</li>
+  <li>Schedule Type - Per Week</li>
+  <li>Schedule Type - Per Month</li>
+</ul>
+<div class="line"></div>
+<!-- Management - FOTA -->
+<h2 id="management_fota">
+  <i class="fas fa-cog"></i>
+Management > FOTA
+</h2>
+<p>This section allows you to set up the Firmware Over-the-Air.</p>
+<h4>Firmware Over the Air</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Enable</th>
+      <td>
+  Enable or disable the FOTA function, which is Enabled by default.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Check only the new firmware version (not upgrade)</th>
+      <td>
+  Only check, not download firmware from the server.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Update backup partition image</th>
+      <td>
+  upgrade image to backup partition, sync two partition
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Server URL</th>
+      <td>
+  Enter custom server URL.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Schedule</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>
+  You can choose Auto or Custom, which is Auto by default.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Auto</th>
+      <td>
+  There are two options for automatic, every day or every week.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Custom</th>
+      <td>
+  You can choose the time or execute it immediately
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h4>Status</h4>
+<p>Show the status information after running. Update information server, Firmware download server, FOTA check time, FOTA software version, Result, FOTA next check time.</p>
+<div class="line"></div>
+<!-- Diagnosis - Ping -->
+<h2 id="diagnosis_ping">
+  <i class="fas fa-wrench"></i>
+  Diagnosis > Ping
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host</th>
+      <td>
+  the host name or the host IP address
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Diagnosis - Traceroute -->
+<h2 id="diagnosis_traceroute">
+  <i class="fas fa-wrench"></i>
+  Diagnosis > Traceroute
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Host</th>
+      <td>
+  the host name or the host IP address
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+<!-- Diagnosis - Ping -->
+<h2 id="diagnosis_tty2tcp">
+  <i class="fas fa-wrench"></i>
+  Diagnosis > TTY2TCP
+</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Port number</th>
+      <td>the port number to issue TTY2TCP</td>
+    </tr>
+    <tr>
+      <th scope="row">Start</th>
+      <td>start TTY2TCP</td>
+    </tr>
+    <tr>
+      <th scope="row">Stop</th>
+      <td>stop TTY2TCP</td>
+    </tr>
+  </tbody>
+</table>
+<div class="line"></div>
+    </div>
+  </div>
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="manual/js/jquery-3.3.1.slim.min.js"></script>
+  <!-- Popper.JS -->
+  <script src="manual/js/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="manual/js/bootstrap.min.js"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script src="manual/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+          theme: "minimal"
+      });
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar, #content').toggleClass('active');
+          $('.collapse.in').toggleClass('in');
+          $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+      $("#color_01").click(function() {
+        $(".color-picker").removeClass("color-picker-active");
+        $("#color_01").addClass("color-picker-active");
+        $("body").css("background-color","#EAEAEF");
+      });
+      $("#color_02").click(function() {
+        $(".color-picker").removeClass("color-picker-active");
+        $("#color_02").addClass("color-picker-active");
+        $("body").css("background-color","#E9EBFE");
+      });
+      $("#color_03").click(function() {
+        $(".color-picker").removeClass("color-picker-active");
+        $("#color_03").addClass("color-picker-active");
+        $("body").css("background-color","#DCE2F1");
+      });
+      $("#color_04").click(function() {
+        $(".color-picker").removeClass("color-picker-active");
+        $("#color_04").addClass("color-picker-active");
+        $("body").css("background-color","#E3EDCD");
+      });
+      $("#color_05").click(function() {
+        $(".color-picker").removeClass("color-picker-active");
+        $("#color_05").addClass("color-picker-active");
+        $("body").css("background-color","#FDE6E0");
+      });
+      $("#color_06").click(function() {
+        $(".color-picker").removeClass("color-picker-active");
+        $("#color_06").addClass("color-picker-active");
+        $("body").css("background-color","#FFF2E2");
+      });
+      $("#color_07").click(function() {
+        $(".color-picker").removeClass("color-picker-active");
+        $("#color_07").addClass("color-picker-active");
+        $("body").css("background-color","#FAF9DE");
+      });
+    });
+  </script>
+</body>
+</html>
