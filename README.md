@@ -13,4 +13,5 @@ https://testrg0428.github.io/m350
 https://testrg0428.github.io/m360
 
 https://testrg0428.github.io/software-install-20201229.pdf
-https://testrg0428.github.io/software-install-20201229.doc
+
+https://testrg0428.github.io/software-install-20201229.docx
