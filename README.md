@@ -20,3 +20,4 @@ https://testrg0428.github.io/software-install-20201229.docx
 Ngrok:
 https://testrg0428.github.io/ngrok讓外部能夠連到localhost的網站及服務.pdf
 
+https://5xruby.tw/posts/easy-ngrok-by-nginx-ssh-tunnel/
