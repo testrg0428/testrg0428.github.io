@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>User Manual</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="manual/css/bootstrap.min.css">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="manual/style.css">
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="manual/css/jquery.mCustomScrollbar.min.css">
+  <!-- Font Awesome JS -->
+  <link rel="stylesheet" href="manual/font-awesome/css/all.min.css">
+
+  <script src="manual/js/jquery.min.js"></script>
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <!-- Popper.JS -->
+  <script src="manual/js/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="manual/js/bootstrap.min.js"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script src="manual/js/jquery.mCustomScrollbar.concat.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="sidebarh"></div>
+    <!-- Page Content  -->
+    <div id="content"> 
+    <div id="status"></div>
+    <div id="system_time_and_date"></div>
+    <div id="system_com_ports"></div>
+    <div id="system_logging"></div>
+    <div id="system_alarm"></div>
+    <div id="system_ethernet_ports"></div>
+    <div id="system_modbus"></div>
+    <div id="system_client_list"></div>
+    <div id="system_bandwidth_monitor"></div>
+    <div id="wan_connection_table"></div>
+    <div id="wan_ethernet"></div>
+    <div id="wifi_sta"></div>
+    <div id="wan_ipv6_dns"></div>
+    <div id="wan_health_check"></div>
+    <div id="lte_lte_config"></div>
+    <div id="lte_gps"></div>
+    <div id="lte_gps_track"></div>
+    <div id="lte_dual_apn"></div>
+    <div id="lte_apn_config"></div>
+    <div id="lte_apnx_usage"></div>
+    <div id="lte_sms"></div>
+    <div id="lte_serving_cell"></div>
+    <div id="lte_lock_pcis"></div>
+    <div id="lte_lock_bnads"></div>
+    <div id="lte_dns"></div>
+    <div id="lte_search_operators"></div>
+    <div id="lte_ussd"></div>
+    <div id="wifi_config"></div>
+    <div id="wifi_config_5g"></div>
+    <div id="wifi_mac_filter"></div>
+    <div id="wifi_mac_filter_5g"></div>
+    <div id="wifi_infomation"></div> 
+    <div id="wifi_infomation_5g"></div>
+    <div id="wifi_wps"></div>
+    <div id="lan_ipv4"></div>
+    <div id="lan_vlan"></div>
+    <div id="lan_subnet"></div>
+    <div id="ipv6_config"></div>
+    <div id="ip_routing_static_route"></div>
+    <div id="policyRT"></div>
+    <div id="ip_routing_rip"></div>
+    <div id="ip_routing_ospf"></div>
+    <div id="ip_routing_bgp"></div>
+    <div id="vpn_open_vpn"></div>
+    <div id="vpn_ipsec"></div>
+    <div id="vpn_gre"></div>
+    <div id="vpn_pptp_srever"></div>
+    <div id="vpn_l2tp"></div>
+    <div id="firewall_basic_rules"></div>
+    <div id="firewall_port_forwarding"></div>
+    <div id="firewall_dns_filter"></div>
+    <div id="firewall_dmz"></div>
+    <div id="firewall_management_ip"></div>
+    <div id="firewall_service_port"></div>
+    <div id="firewall_acl"></div>
+    <div id="firewall_ip_filter"></div>
+    <div id="firewall_mac_filter"></div>
+    <div id="firewall_url_filter"></div>
+    <div id="firewall_nat"></div>
+    <div id="firewall_ips"></div>
+    <div id="service_snmp"></div>
+    <div id="service_tr069"></div>
+    <div id="service_dynamic_dns"></div>
+    <div id="service_vrrp"></div>
+    <div id="service_mqtt"></div>
+    <div id="service_upnp"></div>
+    <div id="service_smtp"></div>
+    <div id="service_ip_alias"></div>
+    <div id="service_qos"></div>
+    <div id="service_wifidog"></div>
+    <div id="service_proxy_arp"></div>
+    <div id="management_identification"></div>
+    <div id="management_administration"></div>
+    <div id="management_contacts"></div>
+    <div id="management_ssh"></div>
+    <div id="management_web"></div>
+    <div id="management_telnet"></div>
+    <div id="management_firmware"></div>
+    <div id="management_modemfw"></div>
+    <div id="management_modemfw_local"></div>
+    <div id="management_configuration"></div>
+    <div id="management_load_factory"></div>
+    <div id="management_restart"></div>
+    <div id="management_schedule_reboot"></div>
+    <div id="management_fail2ban"></div>
+    <div id="management_fota"></div>
+    <div id="diagnosis_ping"></div>
+    <div id="diagnosis_traceroute"></div>
+    <div id="diagnosis_tty2tcp"></div>
+    </div>
+
+  </div>  
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebarh").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+      
+      var serno = Math.random();  
+      var apiurl = "api/prosrcflag?uuid="+serno;
+      var proscfg ={};
+
+      $.ajax({url: apiurl, 
+        success: function(result){
+          load_page(result);
+        },
+        error: function(xhr){
+          load_page({});
+        }
+      });       
+
+    });
+
+    function load_page(cfg) {
+      proscfg = JSON.parse(JSON.stringify(cfg));      
+      proscfg.PROSRC_BWMON = false;
+
+      $("#sidebarh").load("manual/html/sidebar.h.html"); 
+      $("#status").load("manual/html/status.h.html"); 
+
+      if (proscfg.PROSRC_SNTP) {
+        $("#system_time_and_date").load("manual/html/system_time_and_date.h.html"); 
+      }      
+
+      if (proscfg.ICOS_HW_COM && proscfg.ICOS_HW_VCOM) {
+        $("#system_com_ports").load("manual/html/system_com_ports.h.html"); 
+      }
+
+      if (proscfg.PROSRC_LOGS) {
+        $("#system_logging").load("manual/html/system_logging.h.html"); 
+      }
+
+      if (proscfg.PROSRC_ALARM) {
+        $("#system_alarm").load("manual/html/system_alarm.h.html"); 
+      }
+
+      if (proscfg.PROSRC_SWITCH) {
+        $("#system_ethernet_ports").load("manual/html/system_ethernet_ports.h.html"); 
+      }
+
+      if (proscfg.ICOS_HW_MODBUS) {
+        $("#system_modbus").load("manual/html/system_modbus.h.html"); 
+      }
+
+      $("#system_client_list").load("manual/html/system_client_list.h.html"); 
+
+      if (proscfg.PROSRC_BWMON) { 
+        $("#system_bandwidth_monitor").load("manual/html/system_bandwidth_monitor.h.html"); 
+      } 
+
+      // if (proscfg.ICOS_HW_MODBUS) { 
+        $("#wan_connection_table").load("manual/html/wan_connection_table.h.html"); 
+      //}
+
+      //$("#wan_ethernet").load("manual/html/wan_ethernet.h.html"); 
+      
+      if (proscfg.ICOS_HW_WIFI_STA) {
+        $("#wifi_sta").load("manual/html/wifi_sta.h.html"); 
+      }
+      
+      $("#wan_ipv6_dns").load("manual/html/wan_ipv6_dns.h.html"); 
+      
+      if (proscfg.PROSRC_ETH_PING_HEALTH) {
+        $("#wan_health_check").load("manual/html/wan_health_check.h.html"); 
+      }
+      $("#lte_lte_config").load("manual/html/lte_lte_config.h.html"); 
+      
+      if (proscfg.ICOS_HW_GNSS) {
+        $("#lte_gps").load("manual/html/lte_gps.h.html"); 
+        $("#lte_gps_track").load("manual/html/lte_gps_track.h.html"); 
+      }      
+      if (proscfg.PROSRC_LTE_BRIDGE_ROUTER || proscfg.PROSRC_LTE_ROUTER_ROUTER) {
+        $("#lte_dual_apn").load("manual/html/lte_dual_apn.h.html"); 
+      }
+      else {
+        $("#lte_apn_config").load("manual/html/lte_apn_config.h.html"); 
+      }
+      
+      $("#lte_apnx_usage").load("manual/html/lte_apnx_usage.h.html"); 
+
+      if (proscfg.PROSRC_SMS) {
+        $("#lte_sms").load("manual/html/lte_sms.h.html"); 
+      }
+
+      $("#lte_serving_cell").load("manual/html/lte_serving_cell.h.html"); 
+
+      if (proscfg.PROSRC_LTE_LOCK_PCIS) {
+        $("#lte_lock_pcis").load("manual/html/lte_lock_pcis.h.html"); 
+      }
+
+      if (proscfg.PROSRC_LTE_LOCK_BANDS) {
+        $("#lte_lock_bnads").load("manual/html/lte_lock_bnads.h.html"); 
+      }
+
+      $("#lte_dns").load("manual/html/lte_dns.h.html"); 
+
+      if (proscfg.PROSRC_LTE_SEARCH_OPERATORS) {
+        $("#lte_search_operators").load("manual/html/lte_search_operators.h.html"); 
+      }
+
+      if (proscfg.PROSRC_USSD) {
+        $("#lte_ussd").load("manual/html/lte_ussd.h.html"); 
+      }
+
+      if (proscfg.ICOS_HW_WIFI_APSTA) {
+        $("#wifi_config").load("manual/html/wifi_config.h.html"); 
+        $("#wifi_mac_filter").load("manual/html/wifi_mac_filter.h.html"); 
+        $("#wifi_infomation").load("manual/html/wifi_infomation.h.html"); 
+      }
+
+      if (proscfg.ICOS_HW_WIFI_APSTA_5G) {
+        $("#wifi_config_5g").load("manual/html/wifi_config_5g.h.html"); 
+        $("#wifi_mac_filter_5g").load("manual/html/wifi_mac_filter_5g.h.html"); 
+        $("#wifi_infomation_5g").load("manual/html/wifi_infomation_5g.h.html"); 
+      }
+
+      if (proscfg.ICOS_HW_WIFI_AP_COMMON) {
+        $("#wifi_wps").load("manual/html/wifi_wps.h.html"); 
+      }
+
+      $("#lan_ipv4").load("manual/html/lan_ipv4.h.html"); 
+
+      if (proscfg.PROSRC_VLAN) {
+        $("#lan_vlan").load("manual/html/lan_vlan.h.html"); 
+        $("#lan_subnet").load("manual/html/lan_subnet.h.html"); 
+      }
+
+      if (proscfg.PROSRC_IPV6_FUNC) {
+        $("#ipv6_config").load("manual/html/ipv6_config.h.html"); 
+      }
+
+      if (proscfg.PROSRC_ROUTE) {
+        $("#ip_routing_static_route").load("manual/html/ip_routing_static_route.h.html"); 
+      }
+
+      if (proscfg.PROSRC_POLICYRT) {
+        $("#policyRT").load("manual/html/policyRT.h.html"); 
+      }
+
+      if (proscfg.PROSRC_RIP_2G) {
+        $("#ip_routing_rip").load("manual/html/ip_routing_rip.h.html"); 
+      }
+
+      if (proscfg.PROSRC_OSPF_2G) {
+        $("#ip_routing_ospf").load("manual/html/ip_routing_ospf.h.html"); 
+      }
+
+      if (proscfg.PROSRC_BGP) {
+        $("#ip_routing_bgp").load("manual/html/ip_routing_bgp.h.html"); 
+      }
+
+      if (proscfg.PROSRC_OPENVPN) {
+        $("#vpn_open_vpn").load("manual/html/vpn_open_vpn.h.html"); 
+      }
+
+      if (proscfg.PROSRC_IPSEC) {
+        $("#vpn_ipsec").load("manual/html/vpn_ipsec.h.html"); 
+      }
+
+      if (proscfg.PROSRC_GRE) {
+        $("#vpn_gre").load("manual/html/vpn_gre.h.html"); 
+      }
+
+      if (proscfg.PROSRC_PPTPD) {
+        $("#vpn_pptp_srever").load("manual/html/vpn_pptp_srever.h.html"); 
+      }
+
+      if (proscfg.PROSRC_L2TP) {
+        $("#vpn_l2tp").load("manual/html/vpn_l2tp.h.html"); 
+      }
+
+      if (proscfg.PROSRC_FIREWALL) {
+        $("#firewall_basic_rules").load("manual/html/firewall_basic_rules.h.html"); 
+      }
+
+      $("#firewall_port_forwarding").load("manual/html/firewall_port_forwarding.h.html"); 
+
+      if (proscfg.PROSRC_DNS_FILTER) {
+        $("#firewall_dns_filter").load("manual/html/firewall_dns_filter.h.html"); 
+      }
+
+      if (proscfg.PROSRC_DMZ) {
+        $("#firewall_dmz").load("manual/html/firewall_dmz.h.html"); 
+      }
+
+      if (proscfg.PROSRC_FIREWALL) {
+        $("#firewall_management_ip").load("manual/html/firewall_management_ip.h.html"); 
+      }
+
+      if (proscfg.PROSRC_SVCPORT) {
+        $("#firewall_service_port").load("manual/html/firewall_service_port.h.html"); 
+      }
+
+      if (proscfg.PROSRC_ACL) {
+        $("#firewall_acl").load("manual/html/firewall_acl.h.html"); 
+      }
+
+      if (proscfg.PROSRC_IPFILTER) {
+        $("#firewall_ip_filter").load("manual/html/firewall_ip_filter.h.html"); 
+      }
+
+      if (proscfg.PROSRC_MACFILTER) {
+        $("#firewall_mac_filter").load("manual/html/firewall_mac_filter.h.html"); 
+      }
+
+      if (proscfg.PROSRC_URLFILTER) {
+        $("#firewall_url_filter").load("manual/html/firewall_url_filter.h.html"); 
+      }
+
+      if (proscfg.PROSRC_FIREWALL) {
+        $("#firewall_nat").load("manual/html/firewall_nat.h.html"); 
+        $("#firewall_ips").load("manual/html/firewall_ips.h.html");
+      }
+      
+      if (proscfg.PROSRC_SNMP) {
+        $("#service_snmp").load("manual/html/service_snmp.h.html"); 
+      }
+
+      if (proscfg.PROSRC_CWMP) {
+        $("#service_tr069").load("manual/html/service_tr069.h.html"); 
+      }
+
+      if (proscfg.PROSRC_DDNSD) {
+        $("#service_dynamic_dns").load("manual/html/service_dynamic_dns.h.html"); 
+      }
+
+      if (proscfg.PROSRC_VRRP) {
+        $("#service_vrrp").load("manual/html/service_vrrp.h.html"); 
+      }
+
+      if (proscfg.PROSRC_MQTT) {
+        $("#service_mqtt").load("manual/html/service_mqtt.h.html"); 
+      }
+
+      if (proscfg.PROSRC_UPNP_IGD) {
+        $("#service_upnp").load("manual/html/service_upnp.h.html"); 
+      }
+
+      if (proscfg.PROSRC_SMTP) {
+        $("#service_smtp").load("manual/html/service_smtp.h.html"); 
+      }
+
+      if (proscfg.PROSRC_IP_ALIAS) {
+        $("#service_ip_alias").load("manual/html/service_ip_alias.h.html"); 
+      }
+
+      if (proscfg.PROSRC_QOS) {
+        $("#service_qos").load("manual/html/service_qos.h.html"); 
+      }
+
+      if (proscfg.PROSRC_CAPTIVEPORTAL_WIFIDOG) {
+        $("#service_wifidog").load("manual/html/service_wifidog.h.html"); 
+      }
+
+      if (proscfg.PROSRC_PROXY_ARP) {
+        $("#service_proxy_arp").load("manual/html/service_proxy_arp.h.html"); 
+      }
+
+      $("#management_identification").load("manual/html/management_identification.h.html"); 
+      $("#management_administration").load("manual/html/management_administration.h.html"); 
+      $("#management_contacts").load("manual/html/management_contacts.h.html"); 
+      $("#management_ssh").load("manual/html/management_ssh.h.html"); 
+      
+      if (proscfg.PROSRC_FAIL2BAN) {
+        $("#management_fail2ban").load("manual/html/management_fail2ban.h.html"); 
+      }
+
+      if (proscfg.PROSRC_TELNET) {
+        $("#management_telnet").load("manual/html/management_telnet.h.html"); 
+      }
+
+      $("#management_web").load("manual/html/management_web.h.html"); 
+      $("#management_firmware").load("manual/html/management_firmware.h.html"); 
+
+      if (proscfg.PROSRC_MODEM_FIRMWARE) {
+        $("#management_modemfw").load("manual/html/management_modemfw.h.html"); 
+      }
+
+      if (proscfg.PROSRC_LOCALMODEM_FIRMWARE) {
+        $("#management_modemfw_local").load("manual/html/management_modemfw_local.h.html"); 
+      }
+
+      $("#management_configuration").load("manual/html/management_configuration.h.html"); 
+      $("#management_load_factory").load("manual/html/management_load_factory.h.html"); 
+      $("#management_restart").load("manual/html/management_restart.h.html"); 
+
+      if (proscfg.PROSRC_SCHEDULE_REBOOT) {
+        $("#management_schedule_reboot").load("manual/html/management_schedule_reboot.h.html"); 
+      }
+
+      if (proscfg.PROSRC_FOTAD) {
+        $("#management_fota").load("manual/html/management_fota.h.html"); 
+      }
+
+      $("#diagnosis_ping").load("manual/html/diagnosis_ping.h.html"); 
+      $("#diagnosis_traceroute").load("manual/html/diagnosis_traceroute.h.html"); 
+      $("#diagnosis_tty2tcp").load("manual/html/diagnosis_tty2tcp.h.html");       
+    }
+
+    function click_color_01() {      
+      $(".color-picker").removeClass("color-picker-active");
+      $("#color_01").addClass("color-picker-active");
+      $("body").css("background-color", "#EAEAEF");
+    }
+
+    function click_color_02() {      
+      $(".color-picker").removeClass("color-picker-active");
+      $("#color_02").addClass("color-picker-active");
+      $("body").css("background-color", "#E9EBFE");
+    }
+
+    function click_color_03() {
+      $(".color-picker").removeClass("color-picker-active");
+      $("#color_03").addClass("color-picker-active");
+      $("body").css("background-color", "#DCE2F1");
+    }
+
+    function click_color_04() {
+      $(".color-picker").removeClass("color-picker-active");
+      $("#color_04").addClass("color-picker-active");
+      $("body").css("background-color", "#E3EDCD");
+    }
+
+    function click_color_05() {
+      $(".color-picker").removeClass("color-picker-active");
+      $("#color_05").addClass("color-picker-active");
+      $("body").css("background-color", "#FDE6E0");
+    }
+
+    function click_color_06() {
+      $(".color-picker").removeClass("color-picker-active");
+      $("#color_06").addClass("color-picker-active");
+      $("body").css("background-color", "#FFF2E2");
+    }
+
+    function click_color_07() {
+      $(".color-picker").removeClass("color-picker-active");
+      $("#color_07").addClass("color-picker-active");
+      $("body").css("background-color", "#FAF9DE");
+    }
+
+  </script>
+</body>
+
+</html>
